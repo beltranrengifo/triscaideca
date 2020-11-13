@@ -1,6 +1,9 @@
 <template>
-  <div>
+  <section class="flex flex-col h-full">
     <Header />
-    <Nuxt />
-  </div>
+    <main class="flex-auto">
+      <Nuxt />
+    </main>
+    <Footer class="flex-shrink-0" />
+  </section>
 </template>
