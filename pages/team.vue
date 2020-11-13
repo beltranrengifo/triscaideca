@@ -1,13 +1,11 @@
 <template>
-  <header class="header"><p>header</p></header>
+  <div class="container">team!</div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Header',
+  name: 'Team',
 })
 </script>
-
-<style scoped lang="scss"></style>

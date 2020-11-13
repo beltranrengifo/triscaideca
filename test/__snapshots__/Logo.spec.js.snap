@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo matches with snapshot 1`] = `
+<div
+  class="logo"
+  style="width: 50px;"
+>
+  <a>
+    <img
+      alt="Triscaideca Logo"
+      src="[object Object]"
+    />
+  </a>
+</div>
+`;

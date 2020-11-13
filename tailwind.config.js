@@ -8,9 +8,6 @@ module.exports = {
     fontFamily: {
       sans: ['Oswald', 'Arial', 'sans-serif'],
     },
-    fontWeight: {
-      normal: 300,
-    },
     extend: {},
   },
   variants: {},
