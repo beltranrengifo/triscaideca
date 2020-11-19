@@ -1,6 +1,6 @@
 <template>
   <article>
-    <pre> {{ project }} </pre>
+    <carousel :images="project.images" :title="project.title" />
   </article>
 </template>
 
