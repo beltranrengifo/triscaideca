@@ -21,7 +21,10 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['@/assets/scss/main.scss'],
+  css: [
+    '@/assets/scss/main.scss',
+    'vue-slick-carousel/dist/vue-slick-carousel.css',
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['plugins/slick.js'],
@@ -73,7 +76,7 @@ export default {
   ],
 
   styleResources: {
-    scss: [],
+    scss: ['@/assets/scss/_config.functions.scss'],
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

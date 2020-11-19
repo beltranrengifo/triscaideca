@@ -1,0 +1,12 @@
+.slick {
+  &-dots {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  &-active {
+    span {
+      background-color: var(--color-soft);
+    }
+  }
+}

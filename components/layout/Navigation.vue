@@ -27,11 +27,11 @@ export default Vue.extend({
   position: relative;
   &:after {
     content: '';
-    height: 2px;
+    height: rem(2);
     background: var(--color-primary);
     width: 100%;
     position: absolute;
-    bottom: -10px;
+    bottom: rem(-10);
     left: 0;
   }
 }

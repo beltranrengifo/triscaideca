@@ -12,5 +12,3 @@ export default Vue.extend({
   name: 'Header',
 })
 </script>
-
-<style scoped lang="scss"></style>
