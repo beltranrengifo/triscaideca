@@ -1,7 +1,7 @@
 <template>
-  <footer>
+  <footer class="px-5 py-3">
     <p>
-      <small>
+      <small class="text-xs">
         {{ copy }}
       </small>
     </p>

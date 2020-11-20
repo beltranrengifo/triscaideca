@@ -11,3 +11,7 @@
 @function rem($pixels, $context: 16) {
   @return #{$pixels/$context}rem;
 }
+
+@function background-opacity($color, $opacity: 0.3) {
+  @return rgba($color, $opacity);
+}

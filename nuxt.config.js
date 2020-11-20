@@ -2,6 +2,10 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL,
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'triscaideca',
@@ -73,10 +77,14 @@ export default {
         },
       },
     ],
+    'vue-social-sharing/nuxt',
   ],
 
   styleResources: {
-    scss: ['@/assets/scss/_config.functions.scss'],
+    scss: [
+      '@/assets/scss/_config.functions.scss',
+      '@/assets/scss/_config.colors.scss',
+    ],
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
