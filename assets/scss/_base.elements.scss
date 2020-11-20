@@ -1,0 +1,23 @@
+a {
+  font-weight: 400;
+  position: relative;
+  transition: all 0.2s ease-out;
+  &:after {
+    content: '';
+    width: 120%;
+    height: rem(10);
+    background-color: var(--color-primary);
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    opacity: 0.5;
+    transition: all 0.2s ease-out;
+    margin-left: -10%;
+    z-index: -1;
+  }
+  &:hover {
+    &:after {
+      height: 100%;
+    }
+  }
+}
