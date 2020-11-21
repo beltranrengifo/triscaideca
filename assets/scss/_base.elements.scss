@@ -4,7 +4,8 @@ a {
     transition: all 0.2s ease-out;
     &:after {
       content: '';
-      width: 100%;
+      width: 105%;
+      margin-left: -2.5%;
       height: rem(10);
       background-color: var(--color-primary);
       position: absolute;
@@ -14,7 +15,8 @@ a {
       transition: all 0.2s ease-out;
       z-index: -1;
     }
-    &:hover {
+    &:hover,
+    &.nuxt-link-exact-active {
       &:after {
         height: 100%;
       }

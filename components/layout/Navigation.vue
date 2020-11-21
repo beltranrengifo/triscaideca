@@ -20,19 +20,3 @@ export default Vue.extend({
   name: 'Navigation',
 })
 </script>
-
-<style scoped lang="scss">
-.nuxt-link-exact-active {
-  color: var(--color-primary);
-  position: relative;
-  &:after {
-    content: '';
-    height: rem(2);
-    background: var(--color-primary);
-    width: 100%;
-    position: absolute;
-    bottom: rem(-10);
-    left: 0;
-  }
-}
-</style>

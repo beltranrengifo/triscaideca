@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" class="container">
+  <component :is="tag" class="container" :class="{ 'container--boxed': boxed }">
     <slot />
   </component>
 </template>
@@ -15,6 +15,10 @@ export default Vue.extend({
       type: String,
       default: 'section',
     },
+    boxed: {
+      type: Boolean,
+      default: false,
+    },
   },
 })
 </script>
@@ -23,5 +27,8 @@ export default Vue.extend({
 .container {
   max-width: rem(1920);
   margin: 0 auto;
+  &--boxed {
+    max-width: rem(1280);
+  }
 }
 </style>

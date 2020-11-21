@@ -43,13 +43,13 @@ export default Vue.extend({
       return {
         dots: true,
         arrows: false,
-        infinite: true,
+        // infinite: true,
         centerMode: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
         swipeToSlide: true,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 6000,
         speed: 1200,
       }
@@ -61,7 +61,8 @@ export default Vue.extend({
 <style scoped lang="scss">
 .carousel {
   &__image {
-    height: 75vh;
+    height: 76vh;
+    max-width: 96vw;
     pointer-events: none;
     margin: 0 rem(8);
   }

@@ -3,7 +3,7 @@
     <ul v-if="tags && tags.length">
       <li v-for="tag in tagsAsArray" :key="tag">
         <n-link
-          :to="`tag/${tag}`"
+          :to="`/projects/tag/${tag}`"
           class="tags__tag cursor-pointer px-1 inline-block mb-1"
         >
           {{ tag }}

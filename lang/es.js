@@ -4,4 +4,7 @@ export default {
     team: 'Equipo',
     contact: 'Contacto',
   },
+  tagPage: {
+    title: 'Tag: {tag}',
+  },
 }

@@ -11,9 +11,8 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'Project',
 
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params }): Promise<Object> {
     const project = await $content('projects', params.slug).fetch()
-
     return { project }
   },
 })
