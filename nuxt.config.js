@@ -84,6 +84,7 @@ export default {
     scss: [
       '@/assets/scss/_config.functions.scss',
       '@/assets/scss/_config.colors.scss',
+      '@/assets/scss/_config.responsive.scss',
     ],
   },
 

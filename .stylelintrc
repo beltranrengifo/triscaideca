@@ -6,7 +6,12 @@
         "extends",
         "tailwind",
         "function",
-        "return"
+        "return",
+        "else",
+        "if",
+        "mixin",
+        "warn",
+        "include"
       ]
     }],
     "block-no-empty": null,

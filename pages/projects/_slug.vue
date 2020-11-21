@@ -1,6 +1,6 @@
 <template>
   <container tag="article">
-    <carousel :images="project.images" :title="project.title" />
+    <project-carousel :images="project.images" :title="project.title" />
     <project-info :project="project" />
   </container>
 </template>

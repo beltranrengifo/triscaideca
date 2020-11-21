@@ -1,13 +1,15 @@
 <template>
-  <section class="carousel">
+  <section class="project-carousel">
     <slick v-bind="options">
-      <div v-for="(image, i) in images" :key="image">
-        <img
-          :src="`${imageUrl(image)}`"
-          :alt="`${title} imagen - ${i} | Triscaideca`"
-          class="carousel__image"
-        />
-      </div>
+      <template v-for="(image, i) in images">
+        <div v-if="image" :key="image">
+          <img
+            :src="`${imageUrl(image)}`"
+            :alt="`${title} imagen - ${i} | Triscaideca`"
+            class="project-carousel__image"
+          />
+        </div>
+      </template>
       <template #customPaging>
         <span
           class="block cursor-pointer rounded-sm my-2 mx-1 w-2 h-2 bg-soft-light hover:bg-soft transition duration-200"
@@ -21,7 +23,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Carousel',
+  name: 'ProjectCarousel',
 
   props: {
     images: {
@@ -35,21 +37,27 @@ export default Vue.extend({
   },
 
   computed: {
-    imageUrl(): object {
-      return (image: object) => require(`@/assets/images/projects/${image}`)
+    imageUrl(): object | string {
+      return (image: object) => {
+        try {
+          return require(`@/assets/images/projects/${image}`)
+        } catch (e) {
+          return ''
+        }
+      }
     },
 
     options() {
       return {
         dots: true,
         arrows: false,
-        // infinite: true,
+        infinite: true,
         centerMode: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
         swipeToSlide: true,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 6000,
         speed: 1200,
       }
@@ -59,7 +67,7 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.carousel {
+.project-carousel {
   &__image {
     height: 76vh;
     max-width: 96vw;

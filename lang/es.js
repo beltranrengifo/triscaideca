@@ -4,7 +4,10 @@ export default {
     team: 'Equipo',
     contact: 'Contacto',
   },
-  tagPage: {
+  tagArchive: {
     title: 'Tag: {tag}',
+  },
+  team: {
+    title: 'Equipo',
   },
 }
