@@ -1,4 +1,5 @@
-a {
+a,
+.a {
   &:not(.clean-link) {
     position: relative;
     transition: all 0.2s ease-out;

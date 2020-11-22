@@ -77,6 +77,12 @@ export default Vue.extend({
       height: auto;
       max-width: 100vw;
     }
+    @include breakpoint(sm) {
+      object-fit: cover;
+    }
+    @include breakpoint(ml) {
+      object-fit: initial;
+    }
   }
 }
 </style>
