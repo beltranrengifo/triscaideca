@@ -8,7 +8,7 @@
         <img :src="teamImage(team.image)" alt="Triscaideca Equipo" />
       </figure>
     </header>
-    <main class="grid gap-8 grid-cols-1 md:grid-cols-2">
+    <main class="team__body grid gap-8 grid-cols-1 md:grid-cols-2">
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="team__description" v-html="team.content" />
 
@@ -55,6 +55,11 @@ export default Vue.extend({
   &__description {
     p {
       margin-bottom: rem(16);
+    }
+  }
+  &__body {
+    @include breakpoint(only-phone) {
+      padding: rem(16);
     }
   }
 }

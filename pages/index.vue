@@ -11,7 +11,6 @@ export default Vue.extend({
   name: 'Home',
 
   async asyncData({ $content }): Promise<Object> {
-    console.log(await $content('projects').fetch())
     return {
       upper: await $content('projects')
         .only(['featured', 'title', 'path', 'tags'])

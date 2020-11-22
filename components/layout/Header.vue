@@ -1,7 +1,7 @@
 <template>
-  <header class="p-5 flex justify-between">
-    <Logo />
-    <Navigation />
+  <header class="p-5 flex flex-col sm:flex-row sm:justify-between">
+    <Logo class="self-center sm:self-auto mb-4 sm:m-0" />
+    <Navigation class="self-center sm:self-auto mb-4 sm:m-0" />
   </header>
 </template>
 

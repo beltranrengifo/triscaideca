@@ -27,10 +27,6 @@ export default Vue.extend({
 .container {
   max-width: rem(1920);
   margin: 0 auto;
-  padding: 0 rem(16);
-  @include breakpoint(ml) {
-    padding: 0;
-  }
   &--boxed {
     max-width: rem(1024);
   }

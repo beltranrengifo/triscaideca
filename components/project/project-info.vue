@@ -1,5 +1,7 @@
 <template>
-  <section class="single-project px-5 my-5 flex justify-between">
+  <section
+    class="single-project px-5 my-5 flex flex-col sm:flex-row justify-between"
+  >
     <header>
       <h1>
         <component

@@ -1,7 +1,7 @@
 <template>
   <nav class="tags">
-    <ul v-if="tags && tags.length">
-      <li v-for="tag in tagsAsArray" :key="tag">
+    <ul v-if="tags && tags.length" class="flex">
+      <li v-for="tag in tagsAsArray" :key="tag" class="mr-2">
         <n-link
           :to="`/projects/tag/${tag}`"
           class="tags__tag cursor-pointer px-1 inline-block mb-1"

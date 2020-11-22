@@ -73,6 +73,10 @@ export default Vue.extend({
     max-width: 96vw;
     pointer-events: none;
     margin: 0 rem(8);
+    @include breakpoint(only-phone) {
+      height: auto;
+      max-width: 100vw;
+    }
   }
 }
 </style>
@@ -84,6 +88,11 @@ export default Vue.extend({
   }
   .slick-list {
     height: 76vh;
+  }
+  .slick-slide {
+    @include breakpoint(only-phone) {
+      margin-bottom: rem(-1);
+    }
   }
 }
 </style>

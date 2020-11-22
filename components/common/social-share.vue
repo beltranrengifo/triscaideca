@@ -68,8 +68,8 @@ export default Vue.extend({
 <style lang="scss">
 .social-share {
   &__list {
-    & > a {
-      margin: 0 rem(8);
+    & > a:not(:last-child) {
+      margin: 0 rem(16) 0 0;
     }
   }
 }
