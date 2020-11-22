@@ -2,7 +2,7 @@
   <div v-if="$route.path === '/'" class="sm:mr-6 mt-4 sm:mt-0 view-switcher">
     <span
       class="cursor-pointer"
-      :class="{ active: !$state.listView }"
+      :class="{ active: $state && !$state.listView }"
       @click="handleSwitcher(false)"
     >
       {{ $t('viewSwitcher.carousel') }}
@@ -10,7 +10,7 @@
     <span> / </span>
     <span
       class="cursor-pointer"
-      :class="{ active: $state.listView }"
+      :class="{ active: $state && $state.listView }"
       @click="handleSwitcher(true)"
     >
       {{ $t('viewSwitcher.list') }}
