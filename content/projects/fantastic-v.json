@@ -1,18 +1,11 @@
 {
   "favs": 0,
-  "images": [
-    "a1_1604340935525.jpg",
-    "a6_1604340935569.jpg",
-    "a3_1604340935611.jpg",
-    "a4_1604340935651.jpg",
-    "a5_1604340935656.jpg",
-    "a2_1604340935690.jpg"
-  ],
+  "images": ["a1.jpg", "a6.jpg", "a3.jpg", "a4.jpg", "a5.jpg", "a2.jpg"],
   "title": "Fantastic V",
   "description": "",
   "link": "",
   "tags": "",
   "slider": 2,
   "order": 1,
-  "featured": "a_1604340935450.jpg"
+  "featured": "a.jpg"
 }

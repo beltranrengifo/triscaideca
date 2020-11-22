@@ -71,7 +71,7 @@ export default Vue.extend({
           options: {
             ...this.options,
             rtl: true,
-            autoplaySpeed: 6500,
+            autoplaySpeed: 4500,
             speed: 1300,
           },
         },
@@ -99,7 +99,7 @@ export default Vue.extend({
         variableWidth: true,
         swipeToSlide: true,
         autoplay: true,
-        autoplaySpeed: 7200,
+        autoplaySpeed: 5200,
         speed: 1200,
       }
     },
