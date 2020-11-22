@@ -58,7 +58,7 @@ export default Vue.extend({
         variableWidth: true,
         swipeToSlide: true,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
         speed: 1200,
       }
     },
