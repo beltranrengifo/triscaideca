@@ -9,4 +9,9 @@
       background-color: var(--color-soft);
     }
   }
+
+  &-slide,
+  &-slide * {
+    outline: none !important;
+  }
 }

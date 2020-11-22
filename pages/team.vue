@@ -31,10 +31,8 @@ export default Vue.extend({
   name: 'Team',
 
   async asyncData({ $content }): Promise<Object> {
-    const team = await $content('pages', 'team').fetch()
-
     return {
-      team,
+      team: await $content('pages', 'team').fetch(),
     }
   },
 

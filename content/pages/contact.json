@@ -1,0 +1,22 @@
+{
+  "content": "No dudes en ponerte en contacto con nosotros, a través de email, teléfono o haciéndonos una visita a nuestra oficina. Te invitamos a un café y hablamos, que es lo mejor de todo. ¡Te esperamos!",
+  "contactList": [
+    {
+      "name": "Lucía",
+      "data": "+34 618 046 818"
+    },
+    {
+      "name": "Gonzalo",
+      "data": "+34 679 522 562"
+    },
+    {
+      "name": "Email",
+      "data": "info*triscaideca.com",
+      "link": "info@triscaideca.com"
+    },
+    {
+      "name": "Dirección",
+      "data": "Calle Antonio Machado 2, 28750 San Agustín de Guadalix, Madrid"
+    }
+  ]
+}

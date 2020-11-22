@@ -1,7 +1,7 @@
 <template>
   <container tag="section" boxed>
     <header>
-      <h1 class="text-xl">{{ $t('tagPage.title', { tag }) }}</h1>
+      <h1 class="text-xl">{{ $t('tagArchive.title', { tag }) }}</h1>
     </header>
     <main>
       <ul>

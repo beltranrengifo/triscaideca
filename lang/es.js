@@ -7,7 +7,4 @@ export default {
   tagArchive: {
     title: 'Tag: {tag}',
   },
-  team: {
-    title: 'Equipo',
-  },
 }

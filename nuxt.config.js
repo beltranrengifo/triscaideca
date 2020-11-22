@@ -78,6 +78,7 @@ export default {
       },
     ],
     'vue-social-sharing/nuxt',
+    'nuxt-leaflet',
   ],
 
   styleResources: {

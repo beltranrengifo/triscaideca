@@ -58,7 +58,7 @@ export default Vue.extend({
         variableWidth: true,
         swipeToSlide: true,
         autoplay: true,
-        autoplaySpeed: 6000,
+        autoplaySpeed: 4000,
         speed: 1200,
       }
     },
@@ -73,6 +73,17 @@ export default Vue.extend({
     max-width: 96vw;
     pointer-events: none;
     margin: 0 rem(8);
+  }
+}
+</style>
+
+<style lang="scss">
+.project-carousel {
+  .slick-track {
+    cursor: grab;
+  }
+  .slick-list {
+    height: 76vh;
   }
 }
 </style>

@@ -1,18 +1,32 @@
 <template>
   <section class="home-carousel">
     <template v-for="carousel in carousels">
-      <slick :key="carousel.name" v-bind="carousel.options">
+      <slick
+        :key="carousel.name"
+        v-bind="carousel.options"
+        @swipe="swiping = true"
+        @afterChange="swiping = false"
+      >
         <template v-for="(project, i) in carousel.items">
-          <div v-if="imageUrl(project.featured)" :key="project.title">
-            <n-link :to="project.path">
-              <img
-                :src="`${imageUrl(project.featured)}`"
-                :alt="`${project.title} imagen - ${i} | Triscaideca`"
-                class="home-carousel__image"
-              />
-            </n-link>
-            <h2 class="pl-2 text-xl">{{ project.title }}</h2>
-          </div>
+          <n-link
+            v-if="imageUrl(project.featured)"
+            :key="project.title"
+            :to="project.path"
+            tag="article"
+            :class="[swiping ? 'pointer-events-none' : 'cursor-pointer']"
+          >
+            <img
+              :src="`${imageUrl(project.featured)}`"
+              :alt="`${project.title} imagen - ${i} | Triscaideca`"
+              class="home-carousel__image"
+            />
+
+            <h2 class="pl-2 text-xl">
+              <n-link :to="project.path">
+                {{ project.title }}
+              </n-link>
+            </h2>
+          </n-link>
         </template>
       </slick>
     </template>
@@ -35,6 +49,12 @@ export default Vue.extend({
       type: Array as () => Project[],
       required: true,
     },
+  },
+
+  data() {
+    return {
+      swiping: false,
+    }
   },
 
   computed: {
@@ -68,14 +88,14 @@ export default Vue.extend({
       }
     },
 
-    options() {
+    options(): object {
       return {
         dots: false,
         arrows: false,
         infinite: true,
         centerMode: true,
         slidesToShow: 1,
-        slidesToScroll: 2,
+        slidesToScroll: 4,
         variableWidth: true,
         swipeToSlide: true,
         autoplay: true,
