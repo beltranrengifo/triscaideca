@@ -24,7 +24,7 @@
     "sass-loader": "^10.1.0",
     "stylelint-config-recommended": "^3.0.0",
     "vue-slick-carousel": "^1.0.6",
-    "vue-social-sharing": "^3.0.3"
+    "vue-social-sharing": "^3.0.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
