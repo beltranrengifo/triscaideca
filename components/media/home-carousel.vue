@@ -111,6 +111,7 @@ export default Vue.extend({
 .home-carousel {
   &__image {
     height: 40vh;
+    max-width: calc(100vw - 32px);
     pointer-events: none;
     margin: 0 rem(8);
   }
@@ -118,6 +119,14 @@ export default Vue.extend({
     &:first-child {
       margin-bottom: rem(8);
     }
+  }
+}
+</style>
+
+<style lang="scss">
+.home-carousel {
+  .slick-list {
+    height: calc(40vh + 30px);
   }
 }
 </style>

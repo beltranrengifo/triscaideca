@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="flex flex-col justify-between items-center md:items-end">
     <ul class="flex">
       <li v-for="(value, key) in $t('navigation')" :key="key" class="mx-6">
         <n-link
@@ -10,6 +10,7 @@
         </n-link>
       </li>
     </ul>
+    <view-switcher />
   </nav>
 </template>
 

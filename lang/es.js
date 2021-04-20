@@ -7,4 +7,8 @@ export default {
   tagArchive: {
     title: 'Tag: {tag}',
   },
+  viewSwitcher: {
+    carousel: 'slider',
+    list: 'lista',
+  },
 }

@@ -14,7 +14,7 @@
         </client-only>
       </section>
     </container>
-    <container tag="section" class="font-light" boxed>
+    <container tag="section" class="font-light contact__body" boxed>
       <article class="grid gap-8 grid-cols-1 md:grid-cols-3 mt-12">
         <p>
           {{ contact.content }}
@@ -87,7 +87,15 @@ export default Vue.extend({
 <style lang="scss">
 .contact {
   &__map {
-    height: rem(480);
+    height: rem(220);
+    @include breakpoint(sm) {
+      height: rem(480);
+    }
+  }
+  &__body {
+    @include breakpoint(only-phone) {
+      padding: rem(16);
+    }
   }
 }
 </style>

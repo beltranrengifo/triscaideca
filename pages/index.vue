@@ -1,6 +1,7 @@
 <template>
   <container tag="section">
-    <home-carousel :upper="upper" :lower="lower" />
+    <project-list v-if="$state.listView" :projects="all" />
+    <home-carousel v-else :upper="upper" :lower="lower" />
   </container>
 </template>
 
@@ -11,17 +12,20 @@ export default Vue.extend({
   name: 'Home',
 
   async asyncData({ $content }): Promise<Object> {
-    console.log(await $content('projects').fetch())
     return {
       upper: await $content('projects')
-        .only(['featured', 'title', 'path', 'tags'])
+        .only(['featured', 'title', 'path'])
         .where({ slider: { $eq: 1 } })
         .sortBy('order')
         .fetch(),
       lower: await $content('projects')
-        .only(['featured', 'title', 'path', 'tags'])
+        .only(['featured', 'title', 'path'])
         .where({ slider: { $eq: 2 } })
         .sortBy('order')
+        .fetch(),
+      all: await $content('projects')
+        .only(['featured', 'title', 'path'])
+        .sortBy('title')
         .fetch(),
     }
   },

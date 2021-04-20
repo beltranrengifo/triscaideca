@@ -11,7 +11,8 @@
         "if",
         "mixin",
         "warn",
-        "include"
+        "include",
+        "extend"
       ]
     }],
     "block-no-empty": null,
