@@ -1,21 +1,24 @@
 {
   "extends": "stylelint-config-recommended",
   "rules": {
-    "at-rule-no-unknown": [ true, {
-      "ignoreAtRules": [
-        "extends",
-        "tailwind",
-        "function",
-        "return",
-        "else",
-        "if",
-        "mixin",
-        "warn",
-        "include",
-        "extend"
-      ]
-    }],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "extends",
+          "tailwind",
+          "function",
+          "return",
+          "else",
+          "if",
+          "mixin",
+          "warn",
+          "include",
+          "extend"
+        ]
+      }
+    ],
     "block-no-empty": null,
-    "unit-whitelist": ["em", "rem", "s", "px", "%", "vh", "vw"]
+    "unit-whitelist": ["em", "rem", "s", "px", "%", "vh", "vw", "deg"]
   }
 }
