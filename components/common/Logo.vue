@@ -1,5 +1,5 @@
 <template>
-  <div class="logo w-8 sm:w-12">
+  <div class="logo">
     <n-link :to="link">
       <img :src="getLogoImage" :alt="altText" />
     </n-link>
@@ -19,7 +19,7 @@ export default Vue.extend({
     },
     logo: {
       type: String,
-      default: 'triscaideca-black-logo.svg',
+      default: 'triscaideca-logo-v2.svg',
     },
     altText: {
       type: String,
@@ -34,3 +34,9 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.logo {
+  width: rem(360);
+}
+</style>
