@@ -12,6 +12,9 @@
   "link": "http://www.laciudad-invisible.com/",
   "tags": "restaurantes, madrid",
   "featured": "00ciudadinvisible_1551302892931.JPG",
-  "order": 7,
+  "order": 11,
+  "grid-column": "4 / 5",
+  "grid-row": "6 / 7",
+  "height": "half",
   "slider": 2
 }
