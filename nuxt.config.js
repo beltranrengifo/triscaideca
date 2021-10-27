@@ -22,8 +22,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap',
       },
     ],
   },
@@ -90,6 +89,8 @@ export default {
       '@/assets/scss/_config.functions.scss',
       '@/assets/scss/_config.colors.scss',
       '@/assets/scss/_config.responsive.scss',
+      '@/assets/scss/_component.project-grid.scss',
+      '@/assets/scss/_config.transitions.scss',
     ],
   },
 

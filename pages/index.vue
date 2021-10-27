@@ -21,6 +21,7 @@ export default Vue.extend({
           'grid-row',
           'image-position',
           'height',
+          'tags',
         ])
         .sortBy('order')
         .fetch(),

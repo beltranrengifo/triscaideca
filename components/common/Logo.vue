@@ -1,9 +1,9 @@
 <template>
-  <div class="logo">
+  <h1 class="logo" title="Triscaideca">
     <n-link :to="link">
-      <img :src="getLogoImage" :alt="altText" />
+      <img :src="getLogoImage" :alt="altText" title="Triscaideca" />
     </n-link>
-  </div>
+  </h1>
 </template>
 
 <script lang="ts">
