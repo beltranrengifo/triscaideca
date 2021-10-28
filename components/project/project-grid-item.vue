@@ -25,14 +25,11 @@
         tag="div"
         class="project-grid__item-info"
       >
-        <section>
-          <h2 class="project-grid__item-title">{{ project.title.trim() }}</h2>
-          <ul class="project-grid__item-tags">
-            <li v-for="tag in getTagsAsArray(project.tags)" :key="tag">
-              {{ tag }}
-            </li>
-          </ul>
-        </section>
+        <project-title-with-meta
+          :title="project.title"
+          :tags="project.tags"
+          tag="h2"
+        />
       </n-link>
     </transition>
   </article>
@@ -93,12 +90,6 @@ export default Vue.extend({
         `
       }
     },
-
-    getTagsAsArray(): object {
-      return (tags): string => {
-        return tags.split(',').map((tag: string) => tag.trim())
-      }
-    },
   },
 })
 </script>
@@ -133,31 +124,11 @@ export default Vue.extend({
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
     background-color: var(--color-light);
     cursor: pointer;
-    padding: 4px;
-    text-transform: capitalize;
-  }
-
-  &__item-title {
-    font-size: rem(44);
-    text-transform: uppercase;
-    line-height: 0.9;
-    @include breakpoint(sm) {
-      max-width: 66%;
-    }
-  }
-
-  &__item-tags {
-    margin-top: 8px;
-
-    li {
-      font-size: rem(24);
-      line-height: 1;
-    }
+    padding: 12px 6px;
+    display: flex;
+    align-items: flex-end;
   }
 }
 </style>
