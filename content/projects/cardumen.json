@@ -10,7 +10,7 @@
     "CARDUMEN12_web.jpg",
     "CARDUMEN08a_web.jpg",
     "CARDUMEN06b-web.jpg",
-     "CARDUMEN35-web.jpg"
+    "CARDUMEN35-web.jpg"
   ],
   "title": "Cardúmen",
   "description": "",
@@ -18,5 +18,8 @@
   "tags": "restaurantes, madrid",
   "featured": "CARDUMEN08a_web.jpg",
   "slider": 1,
-  "order": 2
+  "order": 13,
+  "grid-column": "2",
+  "grid-row": "2",
+  "height": "full"
 }

@@ -12,5 +12,8 @@
   "tags": "restaurantes, alicante",
   "featured": "00YOLOPIZZA_1551722833395.JPG",
   "slider": 2,
-  "order": 4
+  "order": 16,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full"
 }

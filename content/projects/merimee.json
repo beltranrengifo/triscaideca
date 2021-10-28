@@ -14,6 +14,10 @@
   "link": "http://www.merimeegastrobar.com/",
   "tags": "restaurantes, madrid",
   "featured": "00merimee-web_1551719808562.jpg",
-  "order": 8,
+  "order": 4,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full",
+  "image-position": "left",
   "slider": 2
 }
