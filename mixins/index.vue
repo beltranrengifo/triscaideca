@@ -12,6 +12,12 @@ export default Vue.extend({
         }
       }
     },
+
+    getTagsAsArray(): object {
+      return (tags): string => {
+        return tags.split(',').map((tag: string) => tag.trim())
+      }
+    },
   },
 })
 </script>
