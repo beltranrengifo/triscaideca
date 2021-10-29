@@ -1,33 +1,56 @@
 <template>
   <div class="contact">
-    <container tag="section" class="font-light">
-      <section class="contact__map">
-        <client-only>
-          <l-map
-            :zoom="zoom"
-            :center="coordinates"
-            :options="{ zoomControl: false, attributionControl: false }"
-          >
-            <l-tile-layer :url="tileLayer"></l-tile-layer>
-            <l-marker :icon="icon" :lat-lng="coordinates"></l-marker>
-          </l-map>
-        </client-only>
-      </section>
+    <container full tag="section" class="font-light">
+      <figure class="contact__banner">
+        <img
+          src="@/assets/images/contact-banner-image-top.jpg"
+          alt="Triscaideca Imagen de restaurante"
+        />
+      </figure>
     </container>
-    <container tag="section" class="font-light contact__body" boxed>
-      <article class="grid gap-8 grid-cols-1 md:grid-cols-3 mt-12">
-        <p>
-          {{ contact.content }}
-        </p>
-        <ul>
-          <li v-for="item in contact.contactList" :key="item.name" class="mb-2">
-            <small class="block mb-1"> {{ item.name }}</small>
-            <component :is="tag(item.link)" v-bind="tagProps(item.link)">
-              {{ item.data }}
-            </component>
-          </li>
-        </ul>
-      </article>
+    <container tag="section" boxed>
+      <div class="contact__body">
+        <div class="contact__column">
+          <h2>Espacios para la comunicación</h2>
+          <p>
+            Triscaideca es ante todo un espacio para la comunicación, y después,
+            una fábrica de espacios.
+          </p>
+          <p>
+            Entendemos nuestro trabajo como una relación abierta y fluida con
+            clientes, colaboradores y proveedores. Diseñamos espacios para
+            restaurantes, discotecas, tiendas, cadenas de comida rápida, casas
+            particulares y amigos. Atendemos las necesidades de cualquier ámbito
+            y colaboramos en la creación y diseño de las identidades de marca.
+            Jugando con las formas, los materiales, volúmenes y texturas
+            expresamos nuestra manera de entender un espacio y las sensaciones
+            que debe producir.
+          </p>
+          <p>
+            El arte gráfico, la fotografía y la iluminación son algunas de
+            nuestras debilidades. Sabemos que todo comunica y ponemos mucho mimo
+            al detalle. Disfrutamos con la recuperación de oficios artesanos,
+            colaborando con otros artistas y diseñadores visuales. Algunos con
+            reconocidas trayectorias profesionales y otros,artistas emergentes,
+            con prometedoras carreras.
+          </p>
+          <p>
+            Triscaideca surgió en 2011 con la superstición de que todo iría
+            bien, de la mano de Lucia Macho y Gonzalo Álvarez. Quizá por eso
+            llevemos un trece escondido en nuestro nombre. Adoramos nuestro
+            trabajo y seguiremos en nuestras trece por cumplir algunos años más.
+          </p>
+        </div>
+        <div class="contact__column"></div>
+      </div>
+    </container>
+    <container full tag="section" class="font-light">
+      <figure class="contact__banner">
+        <img
+          src="@/assets/images/contact-banner-image-bottom.jpg"
+          alt="Triscaideca Imagen de restaurante"
+        />
+      </figure>
     </container>
   </div>
 </template>
@@ -45,26 +68,10 @@ export default Vue.extend({
   },
 
   data(): object {
-    return {
-      coordinates: [40.677493, -3.618312],
-      zoom: 14,
-      tileLayer:
-        'https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmVsdHJhbnJlbmdpZm8iLCJhIjoiY2tnZHZpaDFpMG13czJybGV4ZjNsbzNpeCJ9.N47swsSPVmFYeqUZJL3xJg',
-    }
+    return {}
   },
 
   computed: {
-    icon(): object | null {
-      if (!process.browser) {
-        return null
-      }
-      return require('leaflet').icon({
-        iconUrl: '/triscaideca-black-logo.svg',
-        iconSize: [38, 95],
-        iconAnchor: [22, 94],
-      })
-    },
-
     tag(): object {
       return (link: string): string => (link ? 'a' : 'span')
     },
@@ -86,15 +93,34 @@ export default Vue.extend({
 
 <style lang="scss">
 .contact {
-  &__map {
-    height: rem(220);
-    @include breakpoint(sm) {
-      height: rem(480);
+  &__body {
+    display: flex;
+    padding: rem(64) 0;
+
+    h2 {
+      font-size: rem(36);
+      text-transform: uppercase;
+      margin-bottom: rem(32);
+      border-bottom: 1px solid;
+      padding-bottom: 8px;
+    }
+
+    p {
+      font-size: rem(20);
+      margin-bottom: rem(16);
+      line-height: 1.75;
     }
   }
-  &__body {
-    @include breakpoint(only-phone) {
-      padding: rem(16);
+
+  &__column {
+    flex: 1;
+  }
+
+  &__banner {
+    img {
+      width: 100%;
+      height: rem(200);
+      object-fit: cover;
     }
   }
 }
