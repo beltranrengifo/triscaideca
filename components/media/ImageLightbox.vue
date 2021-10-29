@@ -34,22 +34,12 @@ export default Vue.extend({
     },
   },
 
-  data() {
-    return {
-      listener: null,
-    }
-  },
-
-  mounted() {
-    this.listener = document.addEventListener('keyup', (evt) => {
+  mounted(): void {
+    document.addEventListener('keyup', (evt) => {
       evt.keyCode === 27 && this.$emit('handleClose')
       evt.keyCode === 37 && this.$emit('handlePrev')
       evt.keyCode === 39 && this.$emit('handleNext')
     })
-  },
-
-  beforeDestroy() {
-    document.removeEventListener('keyup', this.listener)
   },
 })
 </script>
