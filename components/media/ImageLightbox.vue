@@ -32,6 +32,16 @@ export default Vue.extend({
       type: String,
       default: 'Triscaideca',
     },
+    active: {
+      type: Boolean,
+      required: false,
+    },
+  },
+
+  watch: {
+    active(val) {
+      document.body.classList[val ? 'add' : 'remove']('lock-scroll')
+    },
   },
 
   mounted(): void {
@@ -55,9 +65,16 @@ export default Vue.extend({
   align-items: center;
   background-color: var(--color-light);
 
-  &__figure,
-  &__image {
+  &__figure {
     width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    margin: 0 auto;
   }
 
   &__figure {
@@ -69,6 +86,7 @@ export default Vue.extend({
     top: 40px;
     right: 40px;
     font-size: 32px;
+    background-color: var(--color-light);
   }
 }
 </style>

@@ -12,6 +12,7 @@
     />
     <image-lightbox
       v-show="showImageLightbox"
+      :active="showImageLightbox"
       @handleClose="handleImageLightbox({ show: false })"
       @handlePrev="handleImageNav(-1)"
       @handleNext="handleImageNav(1)"

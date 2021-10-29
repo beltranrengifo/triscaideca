@@ -15,4 +15,8 @@ body {
   font-kerning: none;
   background-color: var(--color-light);
   overflow-x: hidden;
+
+  &.lock-scroll {
+    overflow: hidden;
+  }
 }
