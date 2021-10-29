@@ -1,9 +1,9 @@
 <template>
-  <h1 class="logo" title="Triscaideca">
+  <div class="logo w-8 sm:w-12">
     <n-link :to="link">
-      <img :src="getLogoImage" :alt="altText" title="Triscaideca" />
+      <img :src="getLogoImage" :alt="altText" />
     </n-link>
-  </h1>
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,7 +19,7 @@ export default Vue.extend({
     },
     logo: {
       type: String,
-      default: 'triscaideca-logo-v2.svg',
+      default: 'triscaideca-black-logo.svg',
     },
     altText: {
       type: String,
@@ -34,9 +34,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-.logo {
-  width: rem(360);
-}
-</style>

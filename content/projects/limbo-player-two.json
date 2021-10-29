@@ -12,6 +12,7 @@
     "2-28-LIMBO-PLAYER-TWO-290321-web.jpg",
     "2-30-LIMBO-PLAYER-TWO-290321-web.jpg",
     "2-31-LIMBO-PLAYER-TWO-290321-web.jpg"
+    
   ],
   "title": "Limbo Player Two",
   "description": "",
@@ -19,8 +20,5 @@
   "tags": "restaurantes, asador, cervecería, madrid",
   "featured": "2-8-LIMBO-PLAYER-TWO-290321-_web.jpg",
   "slider": 2,
-  "order": 15,
-  "grid-column": "2",
-  "grid-row": "2",
-  "height": "full"
+  "order": 2
 }
