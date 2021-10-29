@@ -1,6 +1,7 @@
 <template>
   <container tag="article">
-    <project-single :project="project" />
+    <project-carousel :images="project.images" :title="project.title" />
+    <project-info :project="project" />
   </container>
 </template>
 
