@@ -1,11 +1,7 @@
 <template>
-  <nav class="main-nav">
-    <ul class="main-nav__ul flex pt-4">
-      <li
-        v-for="(value, key) in $t('navigation')"
-        :key="key"
-        class="main-nav__item"
-      >
+  <nav class="flex flex-col justify-between items-center md:items-end">
+    <ul class="flex">
+      <li v-for="(value, key) in $t('navigation')" :key="key" class="mx-6">
         <n-link
           :to="`/${key === 'projects' ? '' : key}`"
           class="font-light uppercase"
@@ -14,6 +10,7 @@
         </n-link>
       </li>
     </ul>
+    <view-switcher />
   </nav>
 </template>
 
@@ -24,32 +21,3 @@ export default Vue.extend({
   name: 'Navigation',
 })
 </script>
-
-<style lang="scss" scoped>
-.main-nav {
-  &__item {
-    transform: rotate(-32deg);
-    margin: 0;
-    min-width: 75px;
-
-    a {
-      display: block;
-      transition: transform 0.2s ease-out;
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: rem(420);
-        height: 1px;
-        background-color: var(--color-base);
-      }
-
-      &.nuxt-link-exact-active {
-        transform: translateX(-100%);
-      }
-    }
-  }
-}
-</style>
