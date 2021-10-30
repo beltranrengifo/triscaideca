@@ -1,5 +1,9 @@
 <template>
-  <component :is="tag" class="container" :class="{ 'container--boxed': boxed }">
+  <component
+    :is="tag"
+    class="container"
+    :class="{ 'container--boxed': boxed, 'container--full': full }"
+  >
     <slot />
   </component>
 </template>
@@ -19,6 +23,10 @@ export default Vue.extend({
       type: Boolean,
       default: false,
     },
+    full: {
+      type: Boolean,
+      default: false,
+    },
   },
 })
 </script>
@@ -28,7 +36,10 @@ export default Vue.extend({
   max-width: rem(1920);
   margin: 0 auto;
   &--boxed {
-    max-width: rem(1024);
+    max-width: rem(1280);
+  }
+  &--full {
+    max-width: 100%;
   }
 }
 </style>

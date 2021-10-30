@@ -1,27 +1,36 @@
 <template>
-  <container tag="section" boxed class="font-light">
-    <header>
-      <h1 class="sr-only text-xl">
-        Triscaideca Estudio - {{ $t('team.title') }}
-      </h1>
-      <figure class="mb-8">
-        <img :src="teamImage(team.image)" alt="Triscaideca Equipo" />
-      </figure>
-    </header>
-    <main class="team__body grid gap-8 grid-cols-1 md:grid-cols-2">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="team__description" v-html="team.content" />
-
-      <div>
-        <ul>
-          <li v-for="person in team.team" :key="person.name">
-            <h2 class="text-xl mb-4">{{ person.name }}</h2>
-            <p class="mb-8">{{ person.description }}</p>
-          </li>
-        </ul>
-      </div>
-    </main>
-  </container>
+  <div class="team">
+    <container full tag="section">
+      <header>
+        <h1 class="sr-only text-xl">Triscaideca Estudio</h1>
+        <figure class="team__banner">
+          <img
+            src="@/assets/images/contact-banner-image-top.jpg"
+            alt="Triscaideca Imagen de restaurante"
+          />
+        </figure>
+      </header>
+      <container tag="section" boxed>
+        <h2>{{ teamPage.title }}</h2>
+        <div class="team__body">
+          <div class="team__column">
+            <div v-html="teamPage.content" />
+          </div>
+          <div class="team__column">
+            <team-members :team-members="teamPage.team" />
+          </div>
+        </div>
+      </container>
+      <container full tag="section">
+        <figure class="team__banner">
+          <img
+            src="@/assets/images/contact-banner-image-bottom.jpg"
+            alt="Triscaideca Imagen de restaurante"
+          />
+        </figure>
+      </container>
+    </container>
+  </div>
 </template>
 
 <script lang="ts">
@@ -32,34 +41,46 @@ export default Vue.extend({
 
   async asyncData({ $content }): Promise<Object> {
     return {
-      team: await $content('pages', 'team').fetch(),
+      teamPage: await $content('pages', 'team').fetch(),
     }
-  },
-
-  computed: {
-    teamImage(): object | null {
-      return (image: object) => {
-        try {
-          return require(`@/assets/images/pages/${image}`)
-        } catch (e) {
-          return null
-        }
-      }
-    },
   },
 })
 </script>
 
 <style lang="scss">
 .team {
-  &__description {
-    p {
-      margin-bottom: rem(16);
-    }
+  h2 {
+    font-size: 6vw;
+    margin-top: rem(32);
+    margin-bottom: rem(32);
+    text-align: center;
   }
   &__body {
-    @include breakpoint(only-phone) {
-      padding: rem(16);
+    display: flex;
+    gap: rem(32);
+    padding: rem(16);
+    flex-direction: column;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+
+    p {
+      font-size: rem(20);
+      margin-bottom: rem(16);
+      line-height: 1.75;
+    }
+  }
+
+  &__column {
+    flex: 1;
+  }
+
+  &__banner {
+    img {
+      width: 100%;
+      height: rem(200);
+      object-fit: cover;
     }
   }
 }

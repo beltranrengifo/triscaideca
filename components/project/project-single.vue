@@ -92,7 +92,7 @@ export default Vue.extend({
   padding: rem(16);
   background-image: url('~@/assets/images/lines.svg');
   background-repeat: repeat-y;
-  background-size: cover;
+  background-size: 100% 100%;
 
   @include breakpoint(md) {
     padding: rem(48);
