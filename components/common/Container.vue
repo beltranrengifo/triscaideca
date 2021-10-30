@@ -36,7 +36,7 @@ export default Vue.extend({
   max-width: rem(1920);
   margin: 0 auto;
   &--boxed {
-    max-width: rem(1024);
+    max-width: rem(1280);
   }
   &--full {
     max-width: 100%;
