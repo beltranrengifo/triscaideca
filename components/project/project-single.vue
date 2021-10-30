@@ -89,8 +89,13 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .single-project {
-  padding: rem(48);
+  padding: rem(16);
   background-image: url('~@/assets/images/lines.svg');
   background-repeat: repeat-y;
+  background-size: cover;
+
+  @include breakpoint(md) {
+    padding: rem(48);
+  }
 }
 </style>

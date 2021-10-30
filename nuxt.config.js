@@ -89,8 +89,8 @@ export default {
       '@/assets/scss/_config.functions.scss',
       '@/assets/scss/_config.colors.scss',
       '@/assets/scss/_config.responsive.scss',
-      '@/assets/scss/_component.project-grid.scss',
       '@/assets/scss/_config.transitions.scss',
+      '@/assets/scss/_config.grid.scss',
     ],
   },
 

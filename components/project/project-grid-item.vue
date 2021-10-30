@@ -100,11 +100,28 @@ export default Vue.extend({
     position: relative;
     overflow: hidden;
 
-    &--height-full {
+    @media screen and (max-width: 991px) {
+      grid-column: auto !important;
+    }
+
+    &--height-full,
+    &--height-half {
       height: $--item-height;
     }
-    &--height-half {
-      height: calc((#{$--item-height} - #{$--gap}) / 2);
+
+    @include breakpoint(sm) {
+      &--height-half {
+        height: calc((#{$--item-height} - #{$--gap}) / 2);
+      }
+    }
+
+    @include breakpoint(lg) {
+      &--height-full {
+        height: $--item-height--lg;
+      }
+      &--height-half {
+        height: calc((#{$--item-height--lg} - #{$--gap}) / 2);
+      }
     }
   }
 

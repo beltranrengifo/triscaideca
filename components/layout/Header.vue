@@ -1,6 +1,7 @@
 <template>
   <header
     class="
+      main-header
       px-8
       py-16
       flex flex-col
@@ -20,3 +21,9 @@ export default Vue.extend({
   name: 'Header',
 })
 </script>
+
+<style lang="scss" scoped>
+.main-header {
+  overflow: hidden;
+}
+</style>

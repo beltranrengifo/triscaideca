@@ -1,6 +1,9 @@
 <template>
   <section class="single-project-section">
-    <div class="single-project-section__inner">
+    <div
+      class="single-project-section__inner"
+      :class="{ 'single-project-section__inner--has-title': title }"
+    >
       <figure
         @click="$emit('imageClicked')"
         class="single-project-section__image"
@@ -15,7 +18,7 @@
         :title="title"
         :tags="tags"
         tag="h2"
-        class="ml-12"
+        class="md:ml-12 mb-4 md:mb-0"
       />
       <div v-else class="single-project-section__title-placeholder">
         <p />
@@ -57,13 +60,30 @@ export default Vue.extend({
 
   &__inner {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: rem(34);
+    &--has-title {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+
+      @include breakpoint(sm) {
+        align-items: center;
+      }
+    }
+
+    @include breakpoint(sm) {
+      flex-direction: row;
+    }
   }
 
   &__image,
   &__title {
-    width: 50%;
+    width: 100%;
+
+    @include breakpoint(sm) {
+      width: 50%;
+    }
   }
 
   &__image {
@@ -81,6 +101,13 @@ export default Vue.extend({
   &:nth-child(even) {
     #{$--self}__inner {
       flex-direction: row-reverse;
+    }
+  }
+
+  &__title-placeholder {
+    display: none;
+    @include breakpoint(sm) {
+      display: block;
     }
   }
 }
