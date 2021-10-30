@@ -1,16 +1,15 @@
 <template>
   <div class="team-members">
-    <nav>
-      <ul class="team-members__nav">
-        <li
-          v-for="member in teamMembers"
-          :key="member.name"
-          class="team-members__item"
-        >
-          {{ member.name }}
-        </li>
-      </ul>
-    </nav>
+    <ul class="team-members__ul">
+      <li
+        v-for="member in teamMembers"
+        :key="member.name"
+        class="team-members__item"
+      >
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.description }}</p>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -31,10 +30,21 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .team-members {
-  &__nav {
-    display: flex;
+  &__ul {
+    margin-bottom: rem(64);
+
+    @include breakpoint(md) {
+      padding-left: rem(64);
+      margin-bottom: 0;
+    }
   }
   &__item {
+    h3 {
+      font-size: rem(32);
+    }
+    p {
+      font-size: rem(18);
+    }
   }
 }
 </style>

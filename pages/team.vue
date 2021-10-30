@@ -11,9 +11,9 @@
         </figure>
       </header>
       <container tag="section" boxed>
+        <h2>{{ teamPage.title }}</h2>
         <div class="team__body">
           <div class="team__column">
-            <h2>{{ teamPage.title }}</h2>
             <div v-html="teamPage.content" />
           </div>
           <div class="team__column">
@@ -49,17 +49,20 @@ export default Vue.extend({
 
 <style lang="scss">
 .team {
+  h2 {
+    font-size: 6vw;
+    margin-top: rem(32);
+    margin-bottom: rem(32);
+    text-align: center;
+  }
   &__body {
     display: flex;
-    gap: rem(16);
-    padding: rem(64) 0;
+    gap: rem(32);
+    padding: rem(16);
+    flex-direction: column;
 
-    h2 {
-      font-size: rem(36);
-      text-transform: uppercase;
-      margin-bottom: rem(32);
-      border-bottom: 1px solid;
-      padding-bottom: 8px;
+    @include breakpoint(md) {
+      flex-direction: row;
     }
 
     p {
