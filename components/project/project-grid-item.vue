@@ -100,13 +100,14 @@ export default Vue.extend({
     position: relative;
     overflow: hidden;
 
-    @media screen and (max-width: 991px) {
+    @include breakpoint(only-phone) {
       grid-column: auto !important;
+      grid-row: auto !important;
     }
 
     &--height-full,
     &--height-half {
-      height: $--item-height;
+      height: auto;
     }
 
     @include breakpoint(sm) {

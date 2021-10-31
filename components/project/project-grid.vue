@@ -34,17 +34,16 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: calc(#{$--item-height} / 2);
-  grid-gap: $--gap;
+  grid-gap: $--gap--sm;
 
   @include breakpoint(sm) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: calc(#{$--item-height} / 2);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: $--gap;
   }
 
   @include breakpoint(md) {
-    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: calc(#{$--item-height--lg} / 2);
   }
 }
