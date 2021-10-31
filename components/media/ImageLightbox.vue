@@ -1,6 +1,6 @@
 <template>
   <transition name="slide-fade">
-    <div class="image-lightbox">
+    <div class="image-lightbox" ref="slider">
       <figure class="image-lightbox__figure">
         <img class="image-lightbox__image" :src="imageUrl(image)" alt="" />
       </figure>
@@ -38,8 +38,15 @@ export default Vue.extend({
     },
   },
 
+  data(): object {
+    return {
+      touchstartX: null,
+      touchendX: null,
+    }
+  },
+
   watch: {
-    active(val) {
+    active(val): void {
       document.body.classList[val ? 'add' : 'remove']('lock-scroll')
     },
   },
@@ -50,6 +57,23 @@ export default Vue.extend({
       evt.keyCode === 37 && this.$emit('handlePrev')
       evt.keyCode === 39 && this.$emit('handleNext')
     })
+
+    this.$refs.slider.addEventListener('touchstart', (e) => {
+      this.touchstartX = e.changedTouches[0].screenX
+    })
+
+    this.$refs.slider.addEventListener('touchend', (e) => {
+      this.touchendX = e.changedTouches[0].screenX
+      this.handleGesture()
+    })
+  },
+
+  methods: {
+    handleGesture(): void {
+      this.touchendX < this.touchstartX
+        ? this.$emit('handlePrev')
+        : this.$emit('handleNext')
+    },
   },
 })
 </script>
