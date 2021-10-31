@@ -1,5 +1,5 @@
 <template>
-  <h1 class="logo" title="Triscaideca">
+  <h1 class="logo" :class="{ 'logo--small': small }" title="Triscaideca">
     <n-link :to="link">
       <img :src="getLogoImage" :alt="altText" title="Triscaideca" />
     </n-link>
@@ -25,6 +25,10 @@ export default Vue.extend({
       type: String,
       default: 'Triscaideca Logo',
     },
+    small: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -38,5 +42,9 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .logo {
   width: rem(360);
+
+  &--small {
+    width: rem(160);
+  }
 }
 </style>
