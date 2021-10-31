@@ -95,7 +95,7 @@ export default Vue.extend({
 
     @include breakpoint(sm) {
       width: 350px;
-      margin: 0 auto;
+      margin: 0 auto 0 10%;
       padding: 0;
     }
   }
