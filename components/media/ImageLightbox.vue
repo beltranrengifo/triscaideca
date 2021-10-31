@@ -57,20 +57,18 @@ export default Vue.extend({
       evt.keyCode === 37 && this.$emit('handlePrev')
       evt.keyCode === 39 && this.$emit('handleNext')
     })
-
-    this.$refs.slider.addEventListener('touchstart', (e) => {
-      this.touchstartX = e.changedTouches[0].screenX
+    ;(this as any).$refs.slider.addEventListener('touchstart', (e) => {
+      ;(this as any).touchstartX = e.changedTouches[0].screenX
     })
-
-    this.$refs.slider.addEventListener('touchend', (e) => {
-      this.touchendX = e.changedTouches[0].screenX
+    ;(this as any).$refs.slider.addEventListener('touchend', (e) => {
+      ;(this as any).touchendX = e.changedTouches[0].screenX
       this.handleGesture()
     })
   },
 
   methods: {
     handleGesture(): void {
-      this.touchendX < this.touchstartX
+      ;(this as any).touchendX < (this as any).touchstartX
         ? this.$emit('handlePrev')
         : this.$emit('handleNext')
     },
