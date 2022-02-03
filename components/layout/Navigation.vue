@@ -8,10 +8,10 @@
     </div>
 
     <div
-      class="main-nav__inner"
+      class="main-nav__inner h-full"
       :class="{ 'main-nav__inner--mobile-menu-active': showMobileMenu }"
     >
-      <ul class="main-nav__ul flex pt-4">
+      <ul class="main-nav__ul flex flex-col justify-center h-full">
         <li
           v-if="isMobileMenuBreakpoint"
           class="main-nav__item main-nav__item--mobile-close"
@@ -25,7 +25,7 @@
         >
           <n-link
             :to="`/${key === 'projects' ? '' : key}`"
-            class="font-light uppercase"
+            class="font-bold uppercase"
           >
             {{ value }}
           </n-link>
@@ -140,26 +140,30 @@ export default Vue.extend({
 
   @include breakpoint(sm) {
     &__item {
-      transform: rotate(-32deg);
-      margin: 0;
-      min-width: 75px;
-
       a {
         display: block;
-        transition: transform 0.2s ease-out;
+        transition: all 0.2s ease-out;
+        font-size: rem(20);
+        color: var(--color-primary);
+        position: relative;
 
         &:after {
           content: '';
           position: absolute;
-          bottom: 0;
-          left: 0;
-          width: rem(420);
+          bottom: 5px;
+          left: 2px;
+          width: 100vh;
           height: 1px;
-          background-color: var(--color-base);
+          background-color: var(--color-primary);
         }
 
         &.nuxt-link-exact-active {
           transform: translateX(-100%);
+          color: var(--color-secondary);
+
+          &:after {
+            background-color: var(--color-secondary);
+          }
         }
       }
     }

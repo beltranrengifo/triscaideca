@@ -19,7 +19,7 @@ export default Vue.extend({
     },
     logo: {
       type: String,
-      default: 'Logo-Triscaideca_v1.gif',
+      default: 'triscaideca_logo_circular.svg',
     },
     altText: {
       type: String,
@@ -42,16 +42,16 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .logo {
   img {
-    height: rem(90);
+    height: rem(110);
     @include breakpoint(sm) {
-      height: rem(110);
+      height: rem(200);
     }
   }
   &--small {
     img {
-      height: rem(40);
+      height: rem(90);
       @include breakpoint(sm) {
-        height: rem(60);
+        height: rem(100);
       }
     }
   }

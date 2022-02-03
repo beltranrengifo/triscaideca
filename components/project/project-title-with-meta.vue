@@ -45,11 +45,20 @@ export default Vue.extend({
 
   &__title {
     font-size: rem(44);
+    font-weight: 500;
     text-transform: uppercase;
     line-height: 1.06;
+    color: var(--color-primary);
+    position: relative;
 
-    @include breakpoint(sm) {
-      max-width: 66%;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      left: 2px;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-primary);
     }
   }
 
@@ -60,6 +69,7 @@ export default Vue.extend({
       font-size: rem(24);
       line-height: 1;
       text-transform: uppercase;
+      color: var(--color-primary);
 
       &:not(:first-child) {
         margin-top: 2px;

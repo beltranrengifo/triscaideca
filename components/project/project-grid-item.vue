@@ -142,9 +142,9 @@ export default Vue.extend({
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-light);
+    background-color: rgba($--color-dark, 0.9);
     cursor: pointer;
-    padding: 12px 6px;
+    padding: rem(32) rem(24);
     display: flex;
     align-items: flex-end;
   }
