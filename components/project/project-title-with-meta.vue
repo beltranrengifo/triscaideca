@@ -1,6 +1,8 @@
 <template>
   <div class="project-title-with-meta">
-    <h2 class="project-title-with-meta__title">{{ title.trim() }}</h2>
+    <h2 class="project-title-with-meta__title">
+      <span class="relative">{{ title.trim() }}</span>
+    </h2>
     <ul class="project-title-with-meta__tags">
       <li v-for="tag in getTagsAsArray(tags)" :key="tag">
         {{ tag }}
@@ -50,15 +52,18 @@ export default Vue.extend({
     line-height: 1.06;
     color: var(--color-primary);
     position: relative;
+    margin-bottom: rem(16);
 
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 3px;
-      left: 2px;
-      width: 100%;
-      height: 3px;
-      background-color: var(--color-primary);
+    span {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 3px;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-primary);
+      }
     }
   }
 

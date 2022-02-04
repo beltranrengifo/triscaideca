@@ -1,11 +1,16 @@
 <template>
-  <section class="single-project">
+  <section class="single-project masonry__wrapper">
+    <project-title-with-meta
+      :title="project.title"
+      :tags="project.tags"
+      tag="h2"
+      class="mb-24 masonry__item"
+    />
     <project-single-section
-      v-for="(image, index) in project.images"
+      class="masonry__item"
+      v-for="image in project.images"
       :key="image"
       :image="image"
-      :title="!index ? project.title : ''"
-      :tags="!index ? project.tags : ''"
       @imageClicked="
         handleImageLightbox({ show: true, image, title: project.title })
       "
@@ -90,9 +95,9 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .single-project {
   padding: rem(16);
-  background-image: url('~@/assets/images/lines.svg');
+  background-image: url('~@/assets/images/lines_2.svg');
   background-repeat: repeat-y;
-  background-size: 100% 100%;
+  background-size: contain;
 
   @include breakpoint(md) {
     padding: rem(48);
