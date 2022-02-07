@@ -26,6 +26,10 @@
           <n-link
             :to="`/${key === 'projects' ? '' : key}`"
             class="font-bold uppercase"
+            :class="{
+              'is-project-view': isProjectLink(key),
+            }"
+            exact
           >
             {{ value }}
           </n-link>
@@ -46,6 +50,19 @@ export default Vue.extend({
       isMobileMenuBreakpoint: false,
       showMobileMenu: false,
     }
+  },
+
+  computed: {
+    isProjectLink(): object {
+      return (itemPath): boolean | undefined => {
+        if (!process.browser) return
+
+        return (
+          this.$route?.name?.includes('projects-slug') &&
+          itemPath === 'projects'
+        )
+      }
+    },
   },
 
   mounted(): void {
@@ -157,7 +174,8 @@ export default Vue.extend({
           background-color: var(--color-primary);
         }
 
-        &.nuxt-link-exact-active {
+        &.nuxt-link-active,
+        &.is-project-view {
           transform: translateX(-100%);
           color: var(--color-secondary);
 
