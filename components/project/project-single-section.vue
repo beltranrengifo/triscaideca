@@ -60,6 +60,10 @@ export default Vue.extend({
   &__image {
     cursor: pointer;
     width: 100%;
+
+    img {
+      width: 100%;
+    }
   }
 }
 </style>
