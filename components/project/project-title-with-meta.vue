@@ -94,10 +94,10 @@ export default Vue.extend({
         &:after {
           content: '';
           position: absolute;
-          bottom: 5px;
+          bottom: 6px;
           left: 2px;
           width: 100%;
-          height: 2px;
+          height: 1px;
           background-color: var(--color-primary);
         }
       }

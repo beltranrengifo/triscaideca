@@ -5,10 +5,12 @@
         <img class="image-lightbox__image" :src="imageUrl(image)" alt="" />
       </figure>
       <div class="image-lightbox__actions">
-        <button class="mr-4" @click="$emit('handlePrev')">&lt; Ant.</button>
-        <button @click="$emit('handleNext')">Sig. ></button>
+        <button class="mr-4" @click="$emit('handlePrev')">
+          Anterior (Izq.)
+        </button>
+        <button @click="$emit('handleNext')">Siguiente (Dcha.)</button>
         <span class="mx-4"> | </span>
-        <button @click="$emit('handleClose')">Cerrar X</button>
+        <button @click="$emit('handleClose')">Cerrar (Esc)</button>
       </div>
     </div>
   </transition>
@@ -85,7 +87,7 @@ export default Vue.extend({
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: var(--color-light);
+  background-color: var(--color-dark);
 
   &__figure {
     width: 100%;
@@ -97,6 +99,7 @@ export default Vue.extend({
     height: 100%;
     object-fit: contain;
     margin: 0 auto;
+    filter: drop-shadow(0px 0px 6px $--color-drop-shadow);
   }
 
   &__figure {
@@ -107,8 +110,9 @@ export default Vue.extend({
     position: absolute;
     top: 40px;
     right: 40px;
-    font-size: 32px;
-    background-color: var(--color-light);
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--color-primary);
   }
 }
 </style>
