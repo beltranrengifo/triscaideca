@@ -49,6 +49,10 @@ export default Vue.extend({
 
 <style lang="scss">
 .team {
+  &:after {
+    @include use-fixed-background('~@/assets/images/team_lines.svg');
+  }
+
   h2 {
     font-size: 6vw;
     margin-top: rem(32);

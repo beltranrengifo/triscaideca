@@ -91,6 +91,7 @@ export default {
       '@/assets/scss/_config.responsive.scss',
       '@/assets/scss/_config.transitions.scss',
       '@/assets/scss/_config.grid.scss',
+      '@/assets/scss/_tools.recycle.scss',
     ],
   },
 

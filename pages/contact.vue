@@ -42,6 +42,10 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .contact {
+  &:after {
+    @include use-fixed-background('~@/assets/images/contact_lines.svg');
+  }
+
   &__body {
     display: flex;
     flex-direction: column;
