@@ -65,10 +65,10 @@ export default Vue.extend({
     font-size: rem(44);
     font-weight: 500;
     text-transform: uppercase;
-    line-height: 1.06;
+    line-height: 1;
     color: var(--color-primary);
     position: relative;
-    margin-bottom: rem(16);
+    margin-bottom: 6px;
 
     span {
       &:after {
@@ -87,7 +87,7 @@ export default Vue.extend({
     li {
       span {
         font-size: rem(24);
-        line-height: 1.2;
+        line-height: 1;
         color: var(--color-primary);
         position: relative;
 
@@ -100,10 +100,6 @@ export default Vue.extend({
           height: 1px;
           background-color: var(--color-primary);
         }
-      }
-
-      &:not(:first-child) {
-        margin-top: 6px;
       }
     }
   }

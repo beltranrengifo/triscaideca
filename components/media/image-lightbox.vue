@@ -99,7 +99,7 @@ export default Vue.extend({
     height: 100%;
     object-fit: contain;
     margin: 0 auto;
-    filter: drop-shadow(0px 0px 6px $--color-drop-shadow);
+    filter: drop-shadow(0px 3px 25px $--color-drop-shadow);
   }
 
   &__figure {

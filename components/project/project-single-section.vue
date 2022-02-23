@@ -60,9 +60,15 @@ export default Vue.extend({
   &__image {
     cursor: pointer;
     width: 100%;
+    transform: scale(1);
+    transition: transform 0.15s ease-out;
 
     img {
       width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.006);
     }
   }
 }
