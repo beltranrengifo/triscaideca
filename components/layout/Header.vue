@@ -16,6 +16,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .main-header {
   overflow: hidden;
-  padding: rem(8) rem(32);
+  padding: rem(8) rem(16);
 }
 </style>
