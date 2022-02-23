@@ -14,10 +14,15 @@
           <p>{{ contact.content }}</p>
           <ul class="contact__contact-list">
             <li v-for="contact in contact.contactList" :key="contact.name">
-              <span class="contact__contact-list-name">
-                {{ contact.name }}:
+              <span v-if="contact.name" class="contact__contact-list-name">
+                {{ contact.name }}
               </span>
-              <span class="contact__contact-list-data">{{ contact.data }}</span>
+              <a
+                :href="getItemHref(contact)"
+                target="_blank"
+                class="contact__contact-list-data"
+                >{{ contact.data }}
+              </a>
             </li>
           </ul>
         </div>
@@ -29,6 +34,9 @@
 <script lang="ts">
 import Vue from 'vue'
 
+const GOOGLE_MAPS_LINK =
+  'https://www.google.com/maps/place/C.+Capit%C3%A1n+Daniel+Rivera+Segura,+1,+28750+San+Agust%C3%ADn+del+Guadalix,+Madrid/@40.6855198,-3.6198827,17z/data=!3m1!4b1!4m5!3m4!1s0xd43d1a6b97af3d9:0xd274a22dae2bdfdd!8m2!3d40.6855158!4d-3.617694'
+
 export default Vue.extend({
   name: 'Contact',
 
@@ -37,11 +45,30 @@ export default Vue.extend({
       contact: await $content('pages', 'contact').fetch(),
     }
   },
+
+  computed: {
+    getItemHref(): Object {
+      return (item): string => {
+        switch (item.type) {
+          case 'phone':
+            return `tel:${item.data}`
+          case 'email':
+            return `mailto:${item.data}`
+          case 'address':
+            return GOOGLE_MAPS_LINK
+          default:
+            return item.data
+        }
+      }
+    },
+  },
 })
 </script>
 
 <style lang="scss" scoped>
 .contact {
+  height: 100%;
+
   &:after {
     @include use-fixed-background('~@/assets/images/contact_lines.svg');
   }
@@ -49,7 +76,9 @@ export default Vue.extend({
   &__body {
     display: flex;
     flex-direction: column;
+
     @include breakpoint(sm) {
+      height: 100%;
       flex-direction: row;
     }
   }
@@ -59,19 +88,20 @@ export default Vue.extend({
 
       @include breakpoint(sm) {
         width: 50%;
+        height: 100%;
+
+        figure {
+          height: 100%;
+        }
 
         img {
-          min-height: 400px;
+          height: 100%;
           object-fit: cover;
         }
       }
 
       @include breakpoint(md) {
         width: 60%;
-        img {
-          min-height: auto;
-          object-fit: initial;
-        }
       }
     }
     &--content {
