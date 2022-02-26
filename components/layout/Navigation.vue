@@ -1,5 +1,5 @@
 <template>
-  <nav class="main-nav">
+  <nav class="main-nav" :class="{ 'main-nav--compact': compact }">
     <div
       v-if="isMobileMenuBreakpoint && !showMobileMenu"
       class="main-nav__mobile-menu-button"
@@ -44,6 +44,13 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Navigation',
+
+  props: {
+    compact: {
+      type: Boolean,
+      default: false,
+    },
+  },
 
   data(): object {
     return {
@@ -163,6 +170,7 @@ export default Vue.extend({
         font-size: rem(20);
         color: var(--color-primary);
         position: relative;
+        transition: all 0.2s ease-out;
 
         &:after {
           content: '';
@@ -182,6 +190,18 @@ export default Vue.extend({
           &:after {
             background-color: var(--color-secondary);
           }
+        }
+      }
+    }
+  }
+
+  &--compact {
+    #{$--self}__item {
+      a {
+        font-size: rem(14);
+
+        &:after {
+          bottom: 3px;
         }
       }
     }

@@ -43,10 +43,13 @@ export default Vue.extend({
 .logo {
   img {
     height: rem(110);
+    transition: height 0.1s ease-out;
+
     @include breakpoint(sm) {
       height: rem(200);
     }
   }
+
   &--small {
     img {
       height: rem(90);
