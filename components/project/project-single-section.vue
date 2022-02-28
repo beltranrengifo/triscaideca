@@ -5,8 +5,8 @@
       :class="{ 'single-project-section__inner--has-title': title }"
     >
       <figure
-        @click="$emit('imageClicked')"
         class="single-project-section__image"
+        @click="$emit('imageClicked')"
       >
         <img
           :src="imageUrl(image)"
@@ -19,7 +19,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Project } from '@/types/index'
 import GlobalMixin from '@/mixins/index.vue'
 
 export default Vue.extend({
