@@ -43,7 +43,7 @@ export default Vue.extend({
     transition: opacity 0.2s ease-out;
 
     &--active {
-      transition: opacity 0.2s ease-in-out;
+      opacity: 0.8;
     }
   }
 }
