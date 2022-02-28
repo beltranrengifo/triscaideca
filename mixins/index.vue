@@ -8,6 +8,9 @@ export default Vue.extend({
         try {
           return require(`@/assets/images/projects/${image}`)
         } catch (e) {
+          // eslint-disable-next-line no-console
+          console.log(e)
+
           return ''
         }
       }
