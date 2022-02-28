@@ -1,8 +1,8 @@
 <template>
   <div
-    @click="handleOverlayClick"
     class="main-nav__mobile-overlay"
     :class="{ 'main-nav__mobile-overlay--active': active }"
+    @click="handleOverlayClick"
   />
 </template>
 

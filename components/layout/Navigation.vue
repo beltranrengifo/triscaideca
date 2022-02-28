@@ -16,9 +16,7 @@
           v-if="isMobileMenuBreakpoint"
           class="main-nav__item main-nav__item--mobile-close"
         >
-          <button @click="showMobileMenu = false">
-            X <small>Cerrar</small>
-          </button>
+          <button @click="showMobileMenu = false">X</button>
         </li>
         <li
           v-for="(value, key) in $t('navigation')"
@@ -39,9 +37,9 @@
       </ul>
     </div>
     <mobile-overlay
-      @onOverlayClick="showMobileMenu = false"
       v-show="isMobileMenuBreakpoint && showMobileMenu"
       :active="isMobileMenuBreakpoint && showMobileMenu"
+      @onOverlayClick="showMobileMenu = false"
     />
   </nav>
 </template>
@@ -79,6 +77,12 @@ export default Vue.extend({
     },
   },
 
+  watch: {
+    $route() {
+      setTimeout(() => (this.showMobileMenu = false), 400)
+    },
+  },
+
   mounted(): void {
     this.handleIsMobileMenuBreakpoint()
     window.addEventListener('resize', this.handleIsMobileMenuBreakpoint)
@@ -86,6 +90,7 @@ export default Vue.extend({
 
   methods: {
     handleIsMobileMenuBreakpoint(): void {
+      // eslint-disable-next-line prettier/prettier
       ;(this as any).isMobileMenuBreakpoint =
         window.matchMedia('(max-width: 767px)').matches
     },
@@ -144,6 +149,13 @@ export default Vue.extend({
         &--mobile-close {
           font-size: 36px;
           cursor: pointer;
+          position: absolute;
+          top: 8px;
+          right: 16px;
+
+          button {
+            padding: 0 8px;
+          }
         }
       }
 
@@ -151,6 +163,7 @@ export default Vue.extend({
         position: relative;
         display: block;
         transition: margin-left 0.2s ease-out;
+        margin-left: 35%;
 
         &::after {
           content: '';
@@ -164,7 +177,36 @@ export default Vue.extend({
         }
 
         &.nuxt-link-exact-active {
-          margin-left: 35%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__item {
+    a {
+      display: block;
+      transition: all 0.2s ease-out;
+      color: var(--color-primary);
+      position: relative;
+      transition: all 0.2s ease-out;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 2px;
+        width: 100vh;
+        height: 1px;
+        background-color: var(--color-primary);
+      }
+
+      &.nuxt-link-active,
+      &.is-project-view {
+        color: var(--color-secondary);
+
+        &:after {
+          background-color: var(--color-secondary);
         }
       }
     }
@@ -173,31 +215,11 @@ export default Vue.extend({
   @include breakpoint(sm) {
     &__item {
       a {
-        display: block;
-        transition: all 0.2s ease-out;
         font-size: rem(20);
-        color: var(--color-primary);
-        position: relative;
-        transition: all 0.2s ease-out;
-
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 5px;
-          left: 2px;
-          width: 100vh;
-          height: 1px;
-          background-color: var(--color-primary);
-        }
 
         &.nuxt-link-active,
         &.is-project-view {
           transform: translateX(-100%);
-          color: var(--color-secondary);
-
-          &:after {
-            background-color: var(--color-secondary);
-          }
         }
       }
     }
