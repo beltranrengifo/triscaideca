@@ -19,6 +19,12 @@ export default Vue.extend({
     },
   },
 
+  mounted(): void {
+    document.addEventListener('keyup', (evt) => {
+      evt.keyCode === 27 && this.$emit('onOverlayClick')
+    })
+  },
+
   methods: {
     handleOverlayClick(): void {
       this.$emit('onOverlayClick')
