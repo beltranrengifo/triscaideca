@@ -32,5 +32,6 @@ export default Vue.extend({
   position: relative;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 </style>

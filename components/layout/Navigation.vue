@@ -16,7 +16,9 @@
           v-if="isMobileMenuBreakpoint"
           class="main-nav__item main-nav__item--mobile-close"
         >
-          <button @click="showMobileMenu = false">X</button>
+          <button @click="showMobileMenu = false">
+            X <small>Cerrar</small>
+          </button>
         </li>
         <li
           v-for="(value, key) in $t('navigation')"
@@ -36,6 +38,11 @@
         </li>
       </ul>
     </div>
+    <mobile-overlay
+      @onOverlayClick="showMobileMenu = false"
+      v-show="isMobileMenuBreakpoint && showMobileMenu"
+      :active="isMobileMenuBreakpoint && showMobileMenu"
+    />
   </nav>
 </template>
 
@@ -105,16 +112,17 @@ export default Vue.extend({
 
   &__inner {
     @include breakpoint(only-phone) {
-      width: 65%;
+      width: 75%;
       min-width: 260px;
       position: fixed;
       right: 0;
       top: 0;
-      background: rgb(152 138 101 / 90%);
+      background: var(--color-dark);
       height: 100vh;
       z-index: 99;
       transform: translateX(100%);
       transition: transform 0.2s ease-out;
+      border-left: 1px solid var(--color-primary);
 
       &--mobile-menu-active {
         transform: translateX(0);
@@ -127,7 +135,7 @@ export default Vue.extend({
 
       #{$--self}__item {
         font-size: 28px;
-        color: var(--color-light);
+        color: var(--color-primary);
 
         &:not(:last-child) {
           margin-bottom: rem(32);
