@@ -1,7 +1,7 @@
 <template>
   <transition name="slide-fade">
-    <div class="image-lightbox" ref="slider">
-      <figure class="image-lightbox__figure">
+    <div ref="slider" class="image-lightbox">
+      <figure v-if="image" class="image-lightbox__figure">
         <img class="image-lightbox__image" :src="imageUrl(image)" alt="" />
       </figure>
       <div class="image-lightbox__actions">

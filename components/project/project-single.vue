@@ -7,9 +7,9 @@
       class="mb-24 masonry__item"
     />
     <project-single-section
-      class="masonry__item"
       v-for="image in project.images"
       :key="image"
+      class="masonry__item"
       :image="image"
       @imageClicked="
         handleImageLightbox({ show: true, image, title: project.title })
@@ -18,11 +18,11 @@
     <image-lightbox
       v-show="showImageLightbox"
       :active="showImageLightbox"
+      :image="ligthboxImage"
+      :alt="ligthboxTitle"
       @handleClose="handleImageLightbox({ show: false })"
       @handlePrev="handleImageNav(-1)"
       @handleNext="handleImageNav(1)"
-      :image="ligthboxImage"
-      :alt="ligthboxTitle"
     />
   </section>
 </template>

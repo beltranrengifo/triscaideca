@@ -79,7 +79,7 @@ export default Vue.extend({
 
   watch: {
     $route() {
-      setTimeout(() => (this.showMobileMenu = false), 400)
+      setTimeout(() => ((this as any).showMobileMenu = false), 400)
     },
   },
 
