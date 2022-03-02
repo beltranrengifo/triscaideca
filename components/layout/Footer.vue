@@ -33,5 +33,6 @@ export default Vue.extend({
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  z-index: -1;
 }
 </style>
