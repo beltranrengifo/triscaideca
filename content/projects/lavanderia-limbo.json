@@ -1,0 +1,13 @@
+{
+  "images": ["limbo-lavanderia-1.jpg"],
+  "title": "Lavandería Limbo",
+  "description": "",
+  "link": "https://grupolamusa.com/restaurante-limbo/",
+  "tags": "restaurantes, madrid",
+  "featured": "limbo-lavanderia-featured.jpg",
+  "slider": 1,
+  "order": 28,
+  "grid-column": "2",
+  "grid-row": "2",
+  "height": "full"
+}
