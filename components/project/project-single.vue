@@ -1,5 +1,10 @@
 <template>
-  <section class="single-project masonry__wrapper">
+  <section
+    class="single-project masonry__wrapper"
+    :class="{
+      'masonry__wrapper--full-width-single-image': project.images.length === 1,
+    }"
+  >
     <project-title-with-meta
       :title="project.title"
       :tags="project.tags"

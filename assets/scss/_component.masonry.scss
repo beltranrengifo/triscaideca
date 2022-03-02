@@ -7,6 +7,10 @@
     column-gap: $--masonry-gap;
   }
 
+  &__wrapper--full-width-single-image {
+    column-count: 1;
+  }
+
   &__item {
     display: inline-block;
     width: 100%;
