@@ -23,7 +23,7 @@ export default Vue.extend({
           'height',
           'tags',
         ])
-        .sortBy('order')
+        .sortBy('order', 'desc')
         .fetch(),
     }
   },
