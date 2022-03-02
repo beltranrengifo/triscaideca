@@ -1,13 +1,13 @@
 <template>
   <article
-    @mouseover="show = true"
-    @mouseleave="show = false"
     :class="[
       'project-grid__item',
       `project-grid__item--${index + 1}`,
       `project-grid__item--height-${project.height}`,
     ]"
     :style="getProjectStyles(project)"
+    @mouseover="show = true"
+    @mouseleave="show = false"
   >
     <figure class="project-grid__item-image">
       <n-link :to="project.path">
