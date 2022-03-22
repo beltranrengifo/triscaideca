@@ -35,7 +35,7 @@
 import Vue from 'vue'
 
 const GOOGLE_MAPS_LINK =
-  'https://www.google.com/maps/place/C.+Capit%C3%A1n+Daniel+Rivera+Segura,+1,+28750+San+Agust%C3%ADn+del+Guadalix,+Madrid/@40.6855198,-3.6198827,17z/data=!3m1!4b1!4m5!3m4!1s0xd43d1a6b97af3d9:0xd274a22dae2bdfdd!8m2!3d40.6855158!4d-3.617694'
+  'https://www.google.com/maps/place/28750+San+Agust%C3%ADn+del+Guadalix,+Madrid/@40.6802742,-3.6225501,16z/data=!3m1!4b1!4m5!3m4!1s0xd43d1a200e70e0d:0x1db130f41af8ab09!8m2!3d40.6788466!4d-3.6163061'
 
 export default Vue.extend({
   name: 'Contact',

@@ -62,7 +62,7 @@ export default Vue.extend({
   }
 
   &__title {
-    font-size: rem(44);
+    font-size: rem(24);
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1;
@@ -74,19 +74,52 @@ export default Vue.extend({
       &:after {
         content: '';
         position: absolute;
-        bottom: 10px;
+        bottom: 5px;
         left: 3px;
         width: 100%;
-        height: 3px;
+        height: 2px;
         background-color: var(--color-primary);
       }
+    }
+
+    @include breakpoint(sm) {
+      font-size: rem(28);
+
+      span {
+        &:after {
+          bottom: 6px;
+          height: 3px;
+        }
+      }
+    }
+    @include breakpoint(md) {
+      font-size: rem(32);
+
+      span {
+        &:after {
+          bottom: 6px;
+        }
+      }
+    }
+    @include breakpoint(ml) {
+      font-size: rem(36);
+
+      span {
+        &:after {
+          bottom: 9px;
+        }
+      }
+    }
+    @include breakpoint(lg) {
+      bottom: 12px;
+      font-size: rem(44);
     }
   }
 
   &__tags {
     li {
       span {
-        font-size: rem(24);
+        font-size: rem(16);
         line-height: 1;
         color: var(--color-primary);
         position: relative;
@@ -99,6 +132,10 @@ export default Vue.extend({
           width: 100%;
           height: 1px;
           background-color: var(--color-primary);
+        }
+
+        @include breakpoint(md) {
+          font-size: rem(24);
         }
       }
     }
