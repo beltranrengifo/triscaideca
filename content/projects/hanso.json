@@ -13,9 +13,9 @@
   "description": "",
   "link": "https://hansocafe.es/",
   "tags": "café, madrid",
-  "featured": "hanso_portada_web.jpg",
-  "order": 26,
-  "grid-column": "1",
+  "featured": "Hanso_cafe_2.jpg",
+  "order": 28,
+  "grid-column": "2",
   "grid-row": "2",
   "height": "full",
   "slider": 2
