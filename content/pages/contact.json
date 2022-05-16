@@ -3,20 +3,22 @@
   "contactList": [
     {
       "name": "Lucía",
-      "data": "+34 618 046 818"
+      "data": "+34 618 046 818",
+      "type": "phone"
     },
     {
       "name": "Gonzalo",
-      "data": "+34 679 522 562"
+      "data": "+34 679 522 562",
+      "type": "phone"
     },
     {
-      "name": "Email",
-      "data": "info*triscaideca.com",
-      "link": "info@triscaideca.com"
+      "data": "info@triscaideca.com",
+      "link": "info@triscaideca.com",
+      "type": "email"
     },
     {
-      "name": "Dirección",
-      "data": "Calle Antonio Machado 2, 28750 San Agustín de Guadalix, Madrid"
+      "data": "San Agustín de Guadalix",
+      "type": "address"
     }
   ]
 }

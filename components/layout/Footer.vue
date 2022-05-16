@@ -1,11 +1,15 @@
 <template>
-  <footer class="px-5 py-3">
-    <p>
-      <small class="text-xs">
-        {{ copy }}
-      </small>
-    </p>
-  </footer>
+  <container tag="footer" class="main-footer">
+    <div>
+      <Logo />
+      <p class="mt-1 pl-4">
+        <small class="text-xs">
+          {{ copy }}
+        </small>
+      </p>
+    </div>
+    <Navigation />
+  </container>
 </template>
 
 <script lang="ts">
@@ -16,8 +20,19 @@ export default Vue.extend({
 
   computed: {
     copy(): string {
-      return `© ${new Date().getFullYear()} Triscaideca`
+      return `© ${new Date().getFullYear()}`
     },
   },
 })
 </script>
+
+<style lang="scss">
+.main-footer {
+  padding: rem(64) rem(32);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  z-index: -1;
+}
+</style>

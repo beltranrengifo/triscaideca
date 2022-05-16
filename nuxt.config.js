@@ -22,8 +22,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap',
       },
     ],
   },
@@ -33,6 +32,10 @@ export default {
     '@/assets/scss/main.scss',
     'vue-slick-carousel/dist/vue-slick-carousel.css',
   ],
+
+  pageTransition: {
+    name: 'page-transition',
+  },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['@/plugins/slick.js', '@/plugins/state.js'],
@@ -90,6 +93,9 @@ export default {
       '@/assets/scss/_config.functions.scss',
       '@/assets/scss/_config.colors.scss',
       '@/assets/scss/_config.responsive.scss',
+      '@/assets/scss/_config.transitions.scss',
+      '@/assets/scss/_config.grid.scss',
+      '@/assets/scss/_tools.recycle.scss',
     ],
   },
 

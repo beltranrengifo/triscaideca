@@ -16,5 +16,8 @@
   "tags": "restaurantes, madrid",
   "featured": "00lacanibal-web_1551716774009.jpg",
   "slider": 1,
-  "order": 3
+  "order": 26,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full"
 }

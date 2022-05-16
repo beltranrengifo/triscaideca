@@ -13,6 +13,9 @@
   "link": "https://grupolamusa.com/restaurante-lamusalatina/",
   "tags": "restaurantes, madrid",
   "slider": 1,
-  "order": 3,
+  "order": 18,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full",
   "featured": "16-La-Musa-LATINA-2020-IMG_9708©Beatriz-Olalde.jpg"
 }

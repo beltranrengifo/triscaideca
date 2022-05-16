@@ -1,0 +1,20 @@
+{
+  "images": [
+    "nap1.jpg",
+    "nap2.jpg",
+    "nap3.jpg",
+    "nap4.jpg",
+    "nap5.jpg",
+    "nap6.jpg"
+  ],
+  "title": "NAP",
+  "description": "",
+  "link": "https://www.napofficial.com/",
+  "tags": "restaurantes, madrid",
+  "featured": "neapolitan_portada.jpg",
+  "order": 25,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full",
+  "slider": 2
+}

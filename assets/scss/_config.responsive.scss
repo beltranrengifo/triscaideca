@@ -24,6 +24,6 @@
       @content;
     }
   } @else {
-    @warn "Breakpoint mixin supports: only-small-phone, only-phone, sm, md, ml and lg";
+    @warn "Breakpoint mixin supports: only-small-phone, only-phone, sm, md, only-md, ml and lg";
   }
 }

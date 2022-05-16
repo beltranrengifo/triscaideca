@@ -6,6 +6,9 @@
   "link": "",
   "tags": "",
   "slider": 2,
-  "order": 1,
-  "featured": "a.jpg"
+  "order": 19,
+  "featured": "Fantastic_V.jpg",
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full"
 }

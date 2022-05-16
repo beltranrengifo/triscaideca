@@ -1,9 +1,9 @@
 <template>
-  <div class="logo w-8 sm:w-12">
+  <h1 class="logo" :class="{ 'logo--small': small }" title="Triscaideca">
     <n-link :to="link">
-      <img :src="getLogoImage" :alt="altText" />
+      <img :src="getLogoImage" :alt="altText" title="Triscaideca" />
     </n-link>
-  </div>
+  </h1>
 </template>
 
 <script lang="ts">
@@ -19,11 +19,15 @@ export default Vue.extend({
     },
     logo: {
       type: String,
-      default: 'triscaideca-black-logo.svg',
+      default: 'triscaideca_logo_circular.svg',
     },
     altText: {
       type: String,
       default: 'Triscaideca Logo',
+    },
+    small: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -34,3 +38,25 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.logo {
+  img {
+    height: rem(110);
+    transition: height 0.1s ease-out;
+
+    @include breakpoint(sm) {
+      height: rem(200);
+    }
+  }
+
+  &--small {
+    img {
+      height: rem(90);
+      @include breakpoint(sm) {
+        height: rem(100);
+      }
+    }
+  }
+}
+</style>

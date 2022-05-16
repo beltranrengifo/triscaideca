@@ -13,4 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-kerning: none;
   font-kerning: none;
+  color: var(--color-primary);
+  background-color: var(--color-dark);
+  overflow-x: hidden;
+
+  &.lock-scroll {
+    overflow: hidden;
+  }
 }

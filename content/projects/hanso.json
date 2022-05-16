@@ -1,0 +1,22 @@
+{
+  "images": [
+    "hanso_cafe_1.jpg",
+    "Hanso_cafe_2.jpg",
+    "hanso_cafe_3.jpg",
+    "hanso_cafe_4.jpg",
+    "hanso_cafe-5.jpg",
+    "hanso_cafe_6.jpg",
+    "hanso_cafe_7.jpg",
+    "hanso_cafe_8.jpg"
+  ],
+  "title": "HanSo Café",
+  "description": "",
+  "link": "https://hansocafe.es/",
+  "tags": "café, madrid",
+  "featured": "Hanso_cafe_2.jpg",
+  "order": 28,
+  "grid-column": "2",
+  "grid-row": "2",
+  "height": "full",
+  "slider": 2
+}

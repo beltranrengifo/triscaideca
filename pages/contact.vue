@@ -1,39 +1,41 @@
 <template>
   <div class="contact">
-    <container tag="section" class="font-light">
-      <section class="contact__map">
-        <client-only>
-          <l-map
-            :zoom="zoom"
-            :center="coordinates"
-            :options="{ zoomControl: false, attributionControl: false }"
-          >
-            <l-tile-layer :url="tileLayer"></l-tile-layer>
-            <l-marker :icon="icon" :lat-lng="coordinates"></l-marker>
-          </l-map>
-        </client-only>
-      </section>
-    </container>
-    <container tag="section" class="font-light contact__body" boxed>
-      <article class="grid gap-8 grid-cols-1 md:grid-cols-3 mt-12">
-        <p>
-          {{ contact.content }}
-        </p>
-        <ul>
-          <li v-for="item in contact.contactList" :key="item.name" class="mb-2">
-            <small class="block mb-1"> {{ item.name }}</small>
-            <component :is="tag(item.link)" v-bind="tagProps(item.link)">
-              {{ item.data }}
-            </component>
-          </li>
-        </ul>
-      </article>
+    <container tag="section" class="font-light contact__body">
+      <div class="contact__column contact__column--image">
+        <figure>
+          <img
+            src="@/assets/images/serinac-triscaideca-contact.jpg"
+            alt="Triscaideca Contacto"
+          />
+        </figure>
+      </div>
+      <div class="contact__column contact__column--content">
+        <div class="contact__content">
+          <p>{{ contact.content }}</p>
+          <ul class="contact__contact-list">
+            <li v-for="contact in contact.contactList" :key="contact.name">
+              <span v-if="contact.name" class="contact__contact-list-name">
+                {{ contact.name }}
+              </span>
+              <a
+                :href="getItemHref(contact)"
+                target="_blank"
+                class="contact__contact-list-data"
+                >{{ contact.data }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </container>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+
+const GOOGLE_MAPS_LINK =
+  'https://www.google.com/maps/place/28750+San+Agust%C3%ADn+del+Guadalix,+Madrid/@40.6802742,-3.6225501,16z/data=!3m1!4b1!4m5!3m4!1s0xd43d1a200e70e0d:0x1db130f41af8ab09!8m2!3d40.6788466!4d-3.6163061'
 
 export default Vue.extend({
   name: 'Contact',
@@ -44,58 +46,101 @@ export default Vue.extend({
     }
   },
 
-  data(): object {
-    return {
-      coordinates: [40.677493, -3.618312],
-      zoom: 14,
-      tileLayer:
-        'https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmVsdHJhbnJlbmdpZm8iLCJhIjoiY2tnZHZpaDFpMG13czJybGV4ZjNsbzNpeCJ9.N47swsSPVmFYeqUZJL3xJg',
-    }
-  },
-
   computed: {
-    icon(): object | null {
-      if (!process.browser) {
-        return null
-      }
-      return require('leaflet').icon({
-        iconUrl: '/triscaideca-black-logo.svg',
-        iconSize: [38, 95],
-        iconAnchor: [22, 94],
-      })
-    },
-
-    tag(): object {
-      return (link: string): string => (link ? 'a' : 'span')
-    },
-
-    tagProps(): object {
-      return (link: string | undefined): object | null => {
-        const withMail = link && link.includes('@')
-        return link
-          ? {
-              href: withMail ? `mailto:${link}` : link,
-              target: withMail ? null : '_blank',
-            }
-          : null
+    getItemHref(): Object {
+      return (item): string => {
+        switch (item.type) {
+          case 'phone':
+            return `tel:${item.data}`
+          case 'email':
+            return `mailto:${item.data}`
+          case 'address':
+            return GOOGLE_MAPS_LINK
+          default:
+            return item.data
+        }
       }
     },
   },
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .contact {
-  &__map {
-    height: rem(220);
+  height: 100%;
+
+  &:after {
+    @include use-fixed-background('~@/assets/images/contact_lines.svg');
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
     @include breakpoint(sm) {
-      height: rem(480);
+      height: 100%;
+      flex-direction: row;
     }
   }
-  &__body {
-    @include breakpoint(only-phone) {
-      padding: rem(16);
+  &__column {
+    &--image {
+      width: 100%;
+
+      @include breakpoint(sm) {
+        width: 50%;
+        height: 100%;
+
+        figure {
+          height: 100%;
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      @include breakpoint(md) {
+        width: 60%;
+      }
     }
+    &--content {
+      width: 100%;
+
+      @include breakpoint(sm) {
+        width: 50%;
+      }
+
+      @include breakpoint(md) {
+        width: 40%;
+      }
+    }
+  }
+  &__content {
+    width: 100%;
+    padding: 0 rem(24);
+    margin: 48px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: rem(18);
+
+    @include breakpoint(sm) {
+      width: 350px;
+      margin: 0 auto 0 10%;
+      padding: 0;
+    }
+  }
+
+  &__contact-list {
+    font-size: rem(22);
+    margin-top: rem(48);
+  }
+
+  &__contact-list-name {
+    opacity: 0.7;
   }
 }
 </style>

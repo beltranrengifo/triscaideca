@@ -12,6 +12,9 @@
   "tags": "restaurantes, girona",
   "featured": "00tramonti-web_1551721963393.jpg",
   "permalink": "tramonti",
-  "order": 1,
+  "order": 5,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full",
   "slider": 2
 }

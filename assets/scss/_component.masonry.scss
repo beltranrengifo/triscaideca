@@ -1,0 +1,22 @@
+.masonry {
+  $--masonry-columns: 2;
+  $--masonry-gap: rem(16);
+
+  &__wrapper {
+    column-count: $--masonry-columns;
+    column-gap: $--masonry-gap;
+  }
+
+  &__wrapper--full-width-single-image {
+    column-count: 1;
+  }
+
+  &__item {
+    display: inline-block;
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-bottom: -$--masonry-gap;
+    }
+  }
+}
