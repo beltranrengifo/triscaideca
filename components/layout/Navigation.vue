@@ -81,6 +81,10 @@ export default Vue.extend({
     $route() {
       setTimeout(() => ((this as any).showMobileMenu = false), 400)
     },
+
+    showMobileMenu(val) {
+      this.$emit(val ? 'onOpenMenu' : 'onCloseMenu')
+    },
   },
 
   mounted(): void {
