@@ -1,10 +1,10 @@
 <template>
   <header
     class="main-header flex justify-between flex-shrink-0"
-    :class="{ 'main-header--sticky': showStickyHeader }"
+    :class="{ 'main-header--sticky': $state.showStickyHeader }"
   >
-    <Logo :small="showStickyHeader" />
-    <Navigation :compact="showStickyHeader" />
+    <Logo :small="$state.showStickyHeader" />
+    <Navigation :compact="$state.showStickyHeader" />
   </header>
 </template>
 
@@ -20,13 +20,15 @@ export default Vue.extend({
   data() {
     return {
       handleDebouncedScroll: null,
-      showStickyHeader: false,
     }
   },
 
   methods: {
     handleScroll(event): void {
-      this.showStickyHeader = window.scrollY > STICKY_HEADER_THRESHOLD
+      this.$state.mutate(
+        'showStickyHeader',
+        window.scrollY > STICKY_HEADER_THRESHOLD
+      )
     },
   },
 
