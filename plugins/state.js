@@ -6,7 +6,7 @@ export default (context, inject) => {
 
     data() {
       return {
-        listView: false,
+        showStickyHeader: false,
       }
     },
 
