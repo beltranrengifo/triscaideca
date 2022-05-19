@@ -88,6 +88,7 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   background-color: var(--color-dark);
+  z-index: 1;
 
   &__figure {
     width: 100%;
