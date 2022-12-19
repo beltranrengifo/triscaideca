@@ -52,5 +52,8 @@
     "vue-jest": "^3.0.4",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.12"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
