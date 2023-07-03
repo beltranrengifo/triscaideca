@@ -1,0 +1,21 @@
+{
+  "favs": 0,
+  "images": [
+    "01-La Musa-Latina-sotano.jpg",
+    "02-La Musa-Latina-sotano.jpg",
+    "03-La Musa-Latina-sotano.jpg",
+    "04-La Musa-Latina-sotano.jpg",
+    "05-La Musa-Latina-sotano.jpg",
+    "06-La Musa-Latina-sotano.jpg"
+  ],
+  "title": "La Musa Latina Down Stairs",
+  "description": "",
+  "link": "https://grupolamusa.com/restaurante-lamusalatina/",
+  "tags": "restaurantes, madrid",
+  "slider": 1,
+  "order": 18,
+  "grid-column": "2",
+  "grid-row": "2",
+  "height": "full",
+  "featured": "03-La Musa-Latina-sotano.jpg"
+}
