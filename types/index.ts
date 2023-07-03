@@ -14,4 +14,5 @@ export interface Project {
   tags: string
   title: string
   updatedAt: string
+  hide: boolean
 }

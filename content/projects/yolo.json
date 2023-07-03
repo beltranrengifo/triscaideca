@@ -15,5 +15,6 @@
   "order": 6,
   "grid-column": "1",
   "grid-row": "2",
-  "height": "full"
+  "height": "full",
+  "hide": true
 }
