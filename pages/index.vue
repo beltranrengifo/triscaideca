@@ -11,20 +11,23 @@ export default Vue.extend({
   name: 'Home',
 
   async asyncData({ $content }): Promise<Object> {
+    const all = await $content('projects')
+      .only([
+        'featured',
+        'title',
+        'path',
+        'grid-column',
+        'grid-row',
+        'image-position',
+        'height',
+        'tags',
+        'hide',
+      ])
+      .sortBy('order', 'desc')
+      .fetch()
+
     return {
-      all: await $content('projects')
-        .only([
-          'featured',
-          'title',
-          'path',
-          'grid-column',
-          'grid-row',
-          'image-position',
-          'height',
-          'tags',
-        ])
-        .sortBy('order', 'desc')
-        .fetch(),
+      all: all.filter((item) => !item.hide),
     }
   },
 })

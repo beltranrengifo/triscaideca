@@ -1,0 +1,22 @@
+{
+  "favs": 1,
+  "images": [
+    "00-PORTOMARIN.JPG",
+    "01-PORTOMARIN.JPG",
+    "02-PORTOMARIN.JPG",
+    "03-PORTOMARIN.JPG",
+    "04-PORTOMARIN.JPG",
+    "05-PORTOMARIN.JPG",
+    "06-PORTOMARIN.JPG"
+  ],
+  "title": "Portomarín",
+  "description": "",
+  "link": "https://www.restauranteportomarin.es/",
+  "tags": "restaurantes, madrid",
+  "featured": "02-PORTOMARIN.JPG",
+  "slider": 2,
+  "order": 6,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full"
+}
