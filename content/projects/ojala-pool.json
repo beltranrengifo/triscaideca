@@ -1,0 +1,31 @@
+{
+  "favs": 0,
+  "images": [
+    "00-OJALA.JPG",
+    "01-OJALA.jpg",
+    "02-OJALA.JPG",
+    "03-OJALA.JPG",
+    "04-OJALA.JPG",
+    "05-OJALA.JPG",
+    "06-OJALA.JPG",
+    "07-OJALA.JPG",
+    "08-OJALA.jpg",
+    "09-OJALA.jpg",
+    "10-OJALA.jpg",
+    "11-OJALA.jpg",
+    "12-OJALA.jpg",
+    "13-OJALA.jpg",
+    "14-OJALA.JPG",
+    "15-OJALA.jpg"
+  ],
+  "title": "Ojala Pool Bar",
+  "description": "",
+  "link": "https://grupolamusa.com/restaurante-ojala-pool-bar/",
+  "tags": "restaurantes, madrid",
+  "slider": 1,
+  "order": 30,
+  "grid-column": "2",
+  "grid-row": "2",
+  "height": "full",
+  "featured": "04-OJALA.JPG"
+}
