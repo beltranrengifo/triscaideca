@@ -2,7 +2,7 @@
   <container tag="div" class="project-grid">
     <project-grid-item
       v-for="(project, index) in projects"
-      :key="`${project.title} - ${index}`"
+      :key="`${project.title} - ${project.order}`"
       :project="project"
       :index="index"
     />

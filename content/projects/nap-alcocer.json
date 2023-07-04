@@ -1,0 +1,23 @@
+{
+  "images": [
+    "NAP-A.ALCOCER-01.JPG",
+    "NAP-A.ALCOCER-02.jpg",
+    "NAP-A.ALCOCER-03.JPG",
+    "NAP-A.ALCOCER-04.JPG",
+    "NAP-A.ALCOCER-05.JPG",
+    "NAP-A.ALCOCER-06.JPG",
+    "NAP-A.ALCOCER-07.JPG",
+    "NAP-A.ALCOCER-09.JPG",
+    "NAP-A.ALCOCER-10.JPG"
+  ],
+  "title": "NAP",
+  "description": "Alberto Alcocer",
+  "link": "https://www.napofficial.com/",
+  "tags": "restaurantes, madrid",
+  "featured": "NAP-A.ALCOCER-09.JPG",
+  "order": 18,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full",
+  "slider": 2
+}

@@ -15,6 +15,7 @@ export default Vue.extend({
       .only([
         'featured',
         'title',
+        'description',
         'path',
         'grid-column',
         'grid-row',
@@ -22,6 +23,7 @@ export default Vue.extend({
         'height',
         'tags',
         'hide',
+        'order',
       ])
       .sortBy('order', 'desc')
       .fetch()
