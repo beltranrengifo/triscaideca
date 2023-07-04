@@ -1,0 +1,21 @@
+{
+  "images": [
+    "NAP Mallorca-01.jpg",
+    "NAP Mallorca-02.jpg",
+    "NAP Mallorca-03.jpg",
+    "NAP Mallorca-04.jpg",
+    "NAP Mallorca-05.jpeg",
+    "NAP Mallorca-06.jpeg",
+    "NAP Mallorca-07.jpeg"
+  ],
+  "title": "NAP",
+  "description": "Mallorca",
+  "link": "https://www.napofficial.com/",
+  "tags": "restaurantes, mallorca",
+  "featured": "NAP Mallorca-07.jpeg",
+  "order": 25,
+  "grid-column": "2",
+  "grid-row": "2",
+  "height": "full",
+  "slider": 2
+}

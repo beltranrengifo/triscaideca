@@ -28,6 +28,7 @@
         <project-title-with-meta
           :title="project.title"
           :tags="project.tags"
+          :description="project.description"
           tag="h2"
         />
       </n-link>

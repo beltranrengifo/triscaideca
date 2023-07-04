@@ -1,0 +1,13 @@
+{
+  "images": ["NAP-BILBAO-00.jpg", "NAP-BILBAO-01.jpg", "NAP-BILBAO-02.jpg"],
+  "title": "NAP",
+  "description": "Bilbao",
+  "link": "https://www.napofficial.com/",
+  "tags": "restaurantes, bilbao",
+  "featured": "NAP-BILBAO-00.jpg",
+  "order": 22,
+  "grid-column": "1",
+  "grid-row": "2",
+  "height": "full",
+  "slider": 2
+}

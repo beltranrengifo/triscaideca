@@ -4,6 +4,12 @@
       <h2 class="project-title-with-meta__title">
         <span class="relative" v-html="breakSpaces(title)" />
       </h2>
+      <div
+        class="project-title-with-meta__description relative"
+        v-if="description"
+      >
+        {{ description }}
+      </div>
       <ul class="project-title-with-meta__tags">
         <li v-for="(tag, index) in getTagsAsArray(tags)" :key="tag">
           <span
@@ -34,6 +40,10 @@ export default Vue.extend({
       required: true,
     },
     tags: {
+      type: String,
+      default: '',
+    },
+    description: {
       type: String,
       default: '',
     },
@@ -114,6 +124,10 @@ export default Vue.extend({
       bottom: 12px;
       font-size: rem(44);
     }
+  }
+
+  &__description {
+    bottom: 10px;
   }
 
   &__tags {
