@@ -7,6 +7,7 @@
   >
     <project-title-with-meta
       :title="project.title"
+      :description="project.description"
       :tags="project.tags"
       tag="h2"
       class="mb-24 masonry__item"
